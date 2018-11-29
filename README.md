@@ -21,7 +21,7 @@ Here are my solutions to the codility lessons.  You can find the lessons [here](
 | [MaxCounters](https://app.codility.com/programmers/lessons/4-counting_elements/max_counters/) | [MaxCounters.cpp](Lesson%2004%20-%20Counting%20Elements/MaxCounters.cpp) |100% | 100% | 100% | O(N+M) |
 | [MissingInteger](https://app.codility.com/programmers/lessons/4-counting_elements/missing_integer/) | [MissingInteger.cpp](Lesson%2004%20-%20Counting%20Elements/MissingInteger.cpp) |100% | 100% | 100% | O(N) or O(N*log(N)) |
 | **Lesson 5 - Prefix Sums** | | | | | |
-| [PassingCars](https://app.codility.com/programmers/lessons/5-prefix_sums/passing_cars/) | [PassingCars.cpp](Lesson%2005%20-%20Prefix%20Sums/PassingCars.cpp) | - | - | - | - |
+| [PassingCars](https://app.codility.com/programmers/lessons/5-prefix_sums/passing_cars/) | [PassingCars.cpp](Lesson%2005%20-%20Prefix%20Sums/PassingCars.cpp) | 100% | 100% | 100% | O(N) |
 | [GenomicRangeQuery](https://app.codility.com/programmers/lessons/5-prefix_sums/genomic_range_query/) | []() | - | - | - | - |
 | [MinAvgTwoSlice](https://app.codility.com/programmers/lessons/5-prefix_sums/min_avg_two_slice/) | []() | - | - | - | - |
 | [CountDiv](https://app.codility.com/programmers/lessons/5-prefix_sums/count_div/) | []() | - | - | - | - |
