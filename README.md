@@ -10,7 +10,7 @@ Here are my solutions to the codility lessons.  You can find the lessons [here](
 |[BinaryGap](https://app.codility.com/programmers/lessons/1-iterations/binary_gap/) | [BinaryGap.cpp](Lesson%2001%20-%20Iterations/BinaryGap.cpp) | 100% | 100% | N/A | N/A |
 | **Lesson 2 - Arrays**| | | | | |
 | [CyclicRotation](https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/) | [CyclicRotation.cpp](Lesson%2002%20-%20Arrays/CyclicRotation.cpp) | 100% | 100% | N/A | N/A |
-| [OddOccurencesInArray](https://app.codility.com/programmers/lessons/2-arrays/odd_occurrences_in_array/) |  [OddOccurencesInArray.cpp](Lesson%2002%20-%20Arrays/OddOccurencesInArray.cpp) | 100% | 100% | 100% | O(N) or O(N*log(N)) |
+| [OddOccurencesInArray](https://app.codility.com/programmers/lessons/2-arrays/odd_occurrences_in_array/) |  [OddOccurrencesInArray.cpp](Lesson%2002%20-%20Arrays/OddOccurrencesInArray.cpp) | 100% | 100% | 100% | O(N) or O(N*log(N)) |
 | **Lesson 3 - Time Complexity** | | | | | |
 |[PermMissingElem](https://app.codility.com/programmers/lessons/3-time_complexity/perm_missing_elem/) | [PermMissingElem.cpp](Lesson%2003%20-%20Time%20Complexity/PermMissingElem.cpp) |  100% | 100% | 100% | O(N) or O(N*log(N)) |
 |[FrogJmp](https://app.codility.com/programmers/lessons/3-time_complexity/frog_jmp/) | [FrogJmp.cpp](Lesson%2003%20-%20Time%20Complexity/FrogJmp.cpp) | 100% | 100% | 100% | O(1) |
@@ -18,33 +18,33 @@ Here are my solutions to the codility lessons.  You can find the lessons [here](
 | **Lesson 4 - Counting Elements**| | | | | |
 | [PermCheck](https://app.codility.com/programmers/lessons/4-counting_elements/perm_check/) | [PermCheck.cpp](Lesson%2004%20-%20Counting%20Sums/PermCheck.cpp) | 100% | 100% | 100% | O(N) or O(N*log(N)) |
 | [FrogRiverOne](https://app.codility.com/programmers/lessons/4-counting_elements/frog_river_one/) | [FrogRiverOne.cpp](Lesson%2004%20-%20Counting%20Sums/FrogRiverOne.cpp) |100% | 100% | 100% | O(N) |
-| [MaxCounters](https://app.codility.com/programmers/lessons/4-counting_elements/frog_river_one/) | [MaxCounters.cpp](Lesson%2004%20-%20Counting%20Sums/MaxCounters.cpp) |100% | 100% | 100% | O(N+M) |
+| [MaxCounters](https://app.codility.com/programmers/lessons/4-counting_elements/max_counters/) | [MaxCounters.cpp](Lesson%2004%20-%20Counting%20Sums/MaxCounters.cpp) |100% | 100% | 100% | O(N+M) |
 | [MissingInteger](https://app.codility.com/programmers/lessons/4-counting_elements/missing_integer/) | [MissingInteger.cpp](Lesson%2004%20-%20Counting%20Sums/MissingInteger.cpp) |100% | 100% | 100% | O(N) or O(N*log(N)) |
-| **Lesson 5 - Prefix Sums** || | | | |
+| **Lesson 5 - Prefix Sums** | | | | | |
 |||||||
-| **Lesson 6 - Sorting** || | | | |
+| **Lesson 6 - Sorting** | | | | | |
 |||||||
-| **Lesson 7 - Stacks and Queues** || | | | |
+| **Lesson 7 - Stacks and Queues** | | | | | |
 |||||||
-| **Lesson 8 - Leader** || | | | |
+| **Lesson 8 - Leader** | | | | | |
 |||||||
-| **Lesson 9 - Maximum slice problem** || | | | |
+| **Lesson 9 - Maximum slice problem** | | | | | |
 |||||||
-| **Lesson 10 - Prime and composite numbers** || | | | |
+| **Lesson 10 - Prime and composite numbers** | | | | | |
 |||||||
-| **Lesson 11 - Sieve of Eratosthenes** || | | | |
+| **Lesson 11 - Sieve of Eratosthenes** | | | | | |
 |||||||
-| **Lesson 12 - Euclidean algorithm** || | | | |
+| **Lesson 12 - Euclidean algorithm** | | | | | |
 |||||||
-| **Lesson 13 - Fibonacci numbers** || | | | |
+| **Lesson 13 - Fibonacci numbers** | | | | | |
 |||||||
-| **Lesson 14 - Binary search algorithm** || | | | |
+| **Lesson 14 - Binary search algorithm** | | | | | |
 |||||||
-| **Lesson 15 - Caterpillar method** || | | | |
+| **Lesson 15 - Caterpillar method** | | | | | |
 |||||||
-| **Lesson 16 - Greedy algorithms** || | | | |
+| **Lesson 16 - Greedy algorithms** | | | | | |
 |||||||
-| **Lesson 17 - Dynamic programming** || | | | |
+| **Lesson 17 - Dynamic programming** | | | | | |
 |||||||
 
 
