@@ -19,7 +19,7 @@ Here are my solutions to the codility lessons.  You can find the lessons [here](
 | [PermCheck](https://app.codility.com/programmers/lessons/4-counting_elements/perm_check/) | [PermCheck.cpp](Lesson 04 - Counting Sums/PermCheck.cpp)|
 | [FrogRiverOne](https://app.codility.com/programmers/lessons/4-counting_elements/frog_river_one/) | [FrogRiverOne.cpp](Lesson 04 - Counting Sums/FrogRiverOne.cpp)|
 | [MaxCounters](https://app.codility.com/programmers/lessons/4-counting_elements/frog_river_one/) | [MaxCounters.cpp](Lesson 04 - Counting Sums/MaxCounters.cpp)|
-| [MissingInteger](https://app.codility.com/programmers/lessons/4-counting_elements/missing_integer/) | []()|
+| [MissingInteger](https://app.codility.com/programmers/lessons/4-counting_elements/missing_integer/) | [MissingInteger.cpp](Lesson 04 - Counting Sums/MissingInteger.cpp)|
 | **Lesson 5 - Prefix Sums** ||
 |||
 | **Lesson 6 - Sorting** ||
