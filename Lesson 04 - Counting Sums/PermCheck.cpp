@@ -4,6 +4,7 @@
 // Correctness: 100%
 // Performance: 100%
 // Detected time complexity: O(N) or O(log*log(N))
+//
 #include <vector>
 
 // you can write to stdout for debugging purposes, e.g.

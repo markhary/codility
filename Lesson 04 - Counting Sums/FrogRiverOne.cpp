@@ -4,6 +4,7 @@
 // Correctness: 100%
 // Performance: 100%
 // Detected time complexity: O(N)
+//
 #include <vector>
 
 int solution(int X, vector<int> &A) {
