@@ -23,43 +23,43 @@ Here are my solutions to the codility lessons.  You can find the lessons [here](
 | **Lesson 5 - Prefix Sums** | | | | | | |
 | [PassingCars](https://app.codility.com/programmers/lessons/5-prefix_sums/passing_cars/) | [PassingCars.cpp](Lesson%2005%20-%20Prefix%20Sums/PassingCars.cpp) | ![](https://img.shields.io/badge/difficulty-painless-81c1e1.svg) ![](https://img.shields.io/badge/task%20score-100%25-green.svg) ![](https://img.shields.io/badge/correctness-100%25-green.svg) ![](https://img.shields.io/badge/performance-100%25-green.svg) ![](https://img.shields.io/badge/time%20complexity-O%28N%29-lightgrey.svg) |
 | [GenomicRangeQuery](https://app.codility.com/programmers/lessons/5-prefix_sums/genomic_range_query/) | [GenomicRangeQuery.cpp]((Lesson%2005%20-%20Prefix%20Sums/GenomicRangeQuery.cpp)) | ![](https://img.shields.io/badge/difficulty-respectable-61c0c5.svg) ![](https://img.shields.io/badge/task%20score-100%25-green.svg) ![](https://img.shields.io/badge/correctness-100%25-green.svg) ![](https://img.shields.io/badge/performance-100%25-green.svg) ![](https://img.shields.io/badge/time%20complexity-O%28N%2BM%29-lightgrey.svg) |
-| [MinAvgTwoSlice](https://app.codility.com/programmers/lessons/5-prefix_sums/min_avg_two_slice/) | [MinAvgTwoSlice.cpp](Lesson%2005%20-%20Prefix%20Sums/MinAvgTwoSlice.cpp) | ![](https://img.shields.io/badge/difficulty-respectable-61c0c5.svg) ![](https://img.shields.io/badge/task%20score-60%25-yellow.svg) ![](https://img.shields.io/badge/correctness-100%25-green.svg) ![](https://img.shields.io/badge/performance-20%25-orange.svg) ![](https://img.shields.io/badge/time%20complexity-O%28N%B2%29-red.svg) |
+| [MinAvgTwoSlice](https://app.codility.com/programmers/lessons/5-prefix_sums/min_avg_two_slice/) | [MinAvgTwoSlice.cpp](Lesson%2005%20-%20Prefix%20Sums/MinAvgTwoSlice.cpp) | ![](https://img.shields.io/badge/difficulty-respectable-61c0c5.svg) ![](https://img.shields.io/badge/task%20score-60%25-yellow.svg) ![](https://img.shields.io/badge/correctness-100%25-green.svg) ![](https://img.shields.io/badge/performance-20%25-orange.svg) ![](https://img.shields.io/badge/time%20complexity-O%28N%B2%29-lightgrey.svg) |
 | [CountDiv](https://app.codility.com/programmers/lessons/5-prefix_sums/count_div/) | []() | ![](https://img.shields.io/badge/difficulty-respectable-61c0c5.svg) |
 | **Lesson 6 - Sorting** | | | | | | |
 | [Distinct](https://app.codility.com/programmers/lessons/6-sorting/distinct/) | [Distinct.cpp](Lesson%2006%20-%20Sorting/Distinct.cpp) | ![](https://img.shields.io/badge/difficulty-painless-81c1e1.svg) ![](https://img.shields.io/badge/task%20score-100%25-green.svg) ![](https://img.shields.io/badge/correctness-100%25-green.svg) ![](https://img.shields.io/badge/performance-100%25-green.svg) ![](https://img.shields.io/badge/time%20complexity-O%28N%29%20or%20O%28N%2Alog%28N%29%29-lightgrey.svg) |
 | [Triangle](https://app.codility.com/programmers/lessons/6-sorting/triangle/) | [Triangle.cpp](Lesson%2006%20-%20Sorting/Triangle.cpp) | ![](https://img.shields.io/badge/difficulty-painless-81c1e1.svg) ![](https://img.shields.io/badge/task%20score-100%25-green.svg) ![](https://img.shields.io/badge/correctness-100%25-green.svg) ![](https://img.shields.io/badge/performance-100%25-green.svg) ![](https://img.shields.io/badge/time%20complexity-O%28N%2Alog%28N%29%29-lightgrey.svg) |
-| [MaxProductofThree](https://app.codility.com/programmers/lessons/6-sorting/max_product_of_three/) | []() | ![](https://img.shields.io/badge/difficulty-painless-81c1e1.svg) |
+| [MaxProductOfThree](https://app.codility.com/programmers/lessons/6-sorting/max_product_of_three/) | [MaxProductOfThree.cpp](Lesson%2006%20-%20Sorting/MaxProductOfThree.cpp) | ![](https://img.shields.io/badge/difficulty-painless-81c1e1.svg) ![](https://img.shields.io/badge/task%20score-100%25-green.svg) ![](https://img.shields.io/badge/correctness-100%25-green.svg) ![](https://img.shields.io/badge/performance-100%25-green.svg) ![](https://img.shields.io/badge/time%20complexity-O%28N%2Alog%28N%29%29-lightgrey.svg) |
 | [NumberOfDiscIntersections](https://app.codility.com/programmers/lessons/6-sorting/number_of_disc_intersections/) | []() | ![](https://img.shields.io/badge/difficulty-respectable-61c0c5.svg) | |
-| **Lesson 7 - Stacks and Queues** | | | | | | |
-||||||||
-| **Lesson 8 - Leader** | | | | | | |
-||||||||
-| **Lesson 9 - Maximum slice problem** | | | | | | |
-||||||||
-| **Lesson 10 - Prime and composite numbers** | | | | | | |
-||||||||
-| **Lesson 11 - Sieve of Eratosthenes** | | | | | | |
-||||||||
-| **Lesson 12 - Euclidean algorithm** | | | | | | |
-||||||||
-| **Lesson 13 - Fibonacci numbers** | | | | | | |
-||||||||
-| **Lesson 14 - Binary search algorithm** | | | | | | |
-||||||||
-| **Lesson 15 - Caterpillar method** | | | | | | |
-||||||||
-| **Lesson 16 - Greedy algorithms** | | | | | | |
-||||||||
-| **Lesson 17 - Dynamic programming** | | | | | | |
-||||||||
+| **Lesson 7 - Stacks and Queues** | | |
+||||
+| **Lesson 8 - Leader** | | |
+||||
+| **Lesson 9 - Maximum slice problem** | | |
+||||
+| **Lesson 10 - Prime and composite numbers** | | |
+||||
+| **Lesson 11 - Sieve of Eratosthenes** | | |
+||||
+| **Lesson 12 - Euclidean algorithm** | | |
+||||
+| **Lesson 13 - Fibonacci numbers** | | |
+||||
+| **Lesson 14 - Binary search algorithm** | | |
+||||
+| **Lesson 15 - Caterpillar method** | | |
+||||
+| **Lesson 16 - Greedy algorithms** | | |
+||||
+| **Lesson 17 - Dynamic programming** | | |
+||||
 <!--
-| *Lesson Template* | | | | | | |
-| []() | []() | - | - | - | - | |
+| *Lesson Template* | | |
+| []() | []() | |
 
-Effortless:  https://img.shields.io/badge/✓-effortless-b1e2f1.svg
-Painless:    https://img.shields.io/badge/X-painless-81c1e1.svg
-Respectable: https://img.shields.io/badge/_-respectable-61c0c5.svg
-Ambitious:   https://img.shields.io/badge/_-ambitious-4fa0a4.svg
+Effortless:  https://img.shields.io/badge/difficulty-effortless-b1e2f1.svg
+Painless:    https://img.shields.io/badge/difficulty-painless-81c1e1.svg
+Respectable: https://img.shields.io/badge/difficulty-respectable-61c0c5.svg
+Ambitious:   https://img.shields.io/badge/difficulty-ambitious-4fa0a4.svg
 -->
 
 ## Contributing
