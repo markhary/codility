@@ -88,7 +88,14 @@ vector<int> solution(string &S, vector<int> &P, vector<int> &Q) {
 	return result;
 }
 
-/*
+// End of submitted code
+//
+// This code here shows the evolution of my program, from brute force
+// to final draft
+//
+
+#ifdef BRUTE_FORCE
+
 // Original Solution
 //
 // Task Score: 62%
@@ -96,47 +103,48 @@ vector<int> solution(string &S, vector<int> &P, vector<int> &Q) {
 // Performance: 0%
 // Detected time complexity: Not detected, performance timed out.
 vector<int> solution(string &S, vector<int> &P, vector<int> &Q) {
-const int A_VAL = 1;
-const int C_VAL = 2;
-const int G_VAL = 3;
-const int T_VAL = 4;
+	const int A_VAL = 1;
+	const int C_VAL = 2;
+	const int G_VAL = 3;
+	const int T_VAL = 4;
 
-// iterate through array and create my value array
-int N = S.size();
-vector<int> V(N, 0);
-for (int n=0; n<N; n++) {
-switch (S[n]) {
-case 'A': V[n] = A_VAL; break;
-case 'C': V[n] = C_VAL; break;
-case 'G': V[n] = G_VAL; break;
-case 'T': V[n] = T_VAL; break;
-default: break;
-}
+	// iterate through array and create my value array
+	int N = S.size();
+	vector<int> V(N, 0);
+	for (int n=0; n<N; n++) {
+		switch (S[n]) {
+			case 'A': V[n] = A_VAL; break;
+			case 'C': V[n] = C_VAL; break;
+			case 'G': V[n] = G_VAL; break;
+			case 'T': V[n] = T_VAL; break;
+			default: break;
+		}
+	}
+
+	int M = P.size();
+	vector<int> result(M, 0);
+
+	for (int m=0; m<M; m++) {
+		int l = P[m];
+		int r = Q[m];
+
+		int minimum = 4;
+
+		for (int i=l; i<=r; i++) {
+			if (V[i] < minimum) {
+				minimum = V[i];
+			}
+			// If this is an A then we know minimum is 1, can go to next iteration
+			if (minimum == 1) {
+				result[m] = minimum;
+				break;
+			}
+		}
+		result[m] = minimum;
+	}
+
+	return result;
+
 }
 
-int M = P.size();
-vector<int> result(M, 0);
-
-for (int m=0; m<M; m++) {
-int l = P[m];
-int r = Q[m];
-
-int minimum = 4;
-
-for (int i=l; i<=r; i++) {
-if (V[i] < minimum) {
-minimum = V[i];
-}
-// If this is an A then we know minimum is 1, can go to next iteration
-if (minimum == 1) {
-result[m] = minimum;
-break;
-}
-}
-result[m] = minimum;
-}
-
-return result;
-
-}
-*/
+#endif

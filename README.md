@@ -23,7 +23,7 @@ Here are my solutions to the codility lessons.  You can find the lessons [here](
 | **Lesson 5 - Prefix Sums** | | | | | |
 | [PassingCars](https://app.codility.com/programmers/lessons/5-prefix_sums/passing_cars/) | [PassingCars.cpp](Lesson%2005%20-%20Prefix%20Sums/PassingCars.cpp) | 100% | 100% | 100% | O(N) |
 | [GenomicRangeQuery](https://app.codility.com/programmers/lessons/5-prefix_sums/genomic_range_query/) | [GenomicRangeQuery.cpp]((Lesson%2005%20-%20Prefix%20Sums/GenomicRangeQuery.cpp)) | 100% | 100% | 100% | O(N+M) |
-| [MinAvgTwoSlice](https://app.codility.com/programmers/lessons/5-prefix_sums/min_avg_two_slice/) | []() | - | - | - | - |
+| [MinAvgTwoSlice](https://app.codility.com/programmers/lessons/5-prefix_sums/min_avg_two_slice/) | [MinAvgTwoSlice.cpp](Lesson%2005%20-%20Prefix%20Sums/MinAvgTwoSlice.cpp) | 60% | 100% | 20% | O(N<sup>2</sup>) |
 | [CountDiv](https://app.codility.com/programmers/lessons/5-prefix_sums/count_div/) | []() | - | - | - | - |
 | **Lesson 6 - Sorting** | | | | | |
 |||||||
