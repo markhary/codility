@@ -4,8 +4,10 @@
 
 Here are my solutions to the codility lessons.  You can find the lessons [here](https://app.codility.com/programmers/lessons/1-iterations/).
 
-| Task | Solution | Difficulty | Task Score | Correctness | Performance | Time Complexity| 
-| ---- | -------- | ---------- | ---------- | ----------- | ----------- | -------------- |
+Table Abbreviations:  C = Correctness, P = Performance, TC = Time Complexity
+
+| Task | Solution | Difficulty | Score |  C |   P  |  TC | 
+| ---- | -------- | ---------- | ----- | --- | --- | --- |
 | **Lesson 1 - Iterations**| |
 |[BinaryGap](https://app.codility.com/programmers/lessons/1-iterations/binary_gap/) | [BinaryGap.cpp](Lesson%2001%20-%20Iterations/BinaryGap.cpp) | ![](https://img.shields.io/badge/✓-painless-81c1e1.svg) | 100% | 100% | N/A | N/A |
 | **Lesson 2 - Arrays**| | | | | | |
