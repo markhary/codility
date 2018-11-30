@@ -31,53 +31,53 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 | [Distinct](https://app.codility.com/programmers/lessons/6-sorting/distinct/).[cpp](Lesson%2006%20-%20Sorting/Distinct.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%29%20or%20O%28N%2Alog%28N%29%29-lightgrey.svg) |
 | [Triangle](https://app.codility.com/programmers/lessons/6-sorting/triangle/).[cpp](Lesson%2006%20-%20Sorting/Triangle.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%2Alog%28N%29%29-lightgrey.svg) |
 | [MaxProductOfThree](https://app.codility.com/programmers/lessons/6-sorting/max_product_of_three/).[cpp](Lesson%2006%20-%20Sorting/MaxProductOfThree.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%2Alog%28N%29%29-lightgrey.svg) |
-| [NumberOfDiscIntersections](https://app.codility.com/programmers/lessons/6-sorting/number_of_disc_intersections/) []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) | |
+| [NumberOfDiscIntersections](https://app.codility.com/programmers/lessons/6-sorting/number_of_disc_intersections/) []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
 | **Lesson 7 - Stacks and Queues** | |
-| [Brackets]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) | |
-| [Nesting]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) | |
-| [StoneWall]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) | |
-| [Fish]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) | |
+| [Brackets](https://app.codility.com/programmers/lessons/7-stacks_and_queues/brackets/).[cpp](Lesson%2007%20-%20Stacks%20And%20Queues/Brackets.cpp) | ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%2Alog%28N%29%29-lightgrey.svg) |
+| [Nesting]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| [StoneWall]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| [Fish]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
 | **Lesson 8 - Leader** | |
-| [EquiLeader]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) | |
-| [Dominator]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) | |
-| **Lesson 9 - Maximum slice problem** | |
-| [MaxSliceSum]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) | |
-| [MaxProfit]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) | |
-| [MaxDoubleSliceSum]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) | |
-| **Lesson 10 - Prime and composite numbers** | |
-| [CountFactors]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) | |
-| [MinPerimeterRectangle]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) | |
-| [Peaks]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) | |
-| [Flags]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) | |
-| **Lesson 11 - Sieve of Eratosthenes** | |
-| [CountNonDivisible]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) | |
-| [CountSemiprimes]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) | |
-| **Lesson 12 - Euclidean algorithm** | |
-| [ChocolatesByNumbers]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) | |
-| [CommonPrimeDivisors]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) | |
-| **Lesson 13 - Fibonacci numbers** | |
-| [FibFrog]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) | |
-| [Ladder]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) | |
-| **Lesson 14 - Binary search algorithm** | |
-| [MinMaxDivision]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) | |
-| [NailingPlanks]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) | |
-| **Lesson 15 - Caterpillar method** | |
-| [AbsDistinct]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) | |
-| [CountDistinctSlices]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) | |
-| [CountTriangles]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) | |
-| [MinAbsSumOfTwo]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) | |
-| **Lesson 16 - Greedy algorithms** | |
-| [MaxNonoverlappingSegments]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) | |
-| [TieRopes]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) | |
-| **Lesson 17 - Dynamic programming** | |
-| [NumberSolitaire]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) | |
-| [MinAbsSum]() []() | ![](https://img.shields.io/badge/D-ambitious-4fa0a4.svg) | |
+| [EquiLeader]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| [Dominator]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| **Lesson 9 - Maximum Slice Problem** | |
+| [MaxSliceSum]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| [MaxProfit]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| [MaxDoubleSliceSum]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
+| **Lesson 10 - Prime and Composite Numbers** | |
+| [CountFactors]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| [MinPerimeterRectangle]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| [Peaks]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
+| [Flags]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
+| **Lesson 11 - Sieve Of Eratosthenes** | |
+| [CountNonDivisible]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
+| [CountSemiprimes]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
+| **Lesson 12 - Euclidean Algorithm** | |
+| [ChocolatesByNumbers]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| [CommonPrimeDivisors]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
+| **Lesson 13 - Fibonacci Numbers** | |
+| [FibFrog]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
+| [Ladder]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
+| **Lesson 14 - Binary Search Algorithm** | |
+| [MinMaxDivision]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
+| [NailingPlanks]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
+| **Lesson 15 - Caterpillar Method** | |
+| [AbsDistinct]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| [CountDistinctSlices]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| [CountTriangles]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| [MinAbsSumOfTwo]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
+| **Lesson 16 - Greedy Algorithms** | |
+| [MaxNonoverlappingSegments]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| [TieRopes]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| **Lesson 17 - Dynamic Programming** | |
+| [NumberSolitaire]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
+| [MinAbsSum]() []() | ![](https://img.shields.io/badge/D-ambitious-4fa0a4.svg) |
 <!--
 | *Lesson Template* | |
-| []() []() | ![](https://img.shields.io/badge/D-effortless-b1e2f1.svg) | |
-| []() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) | |
-| []() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) | |
-| []() []() | ![](https://img.shields.io/badge/D-ambitious-4fa0a4.svg) | |
+| []() []() | ![](https://img.shields.io/badge/D-effortless-b1e2f1.svg) |
+| []() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| []() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
+| []() []() | ![](https://img.shields.io/badge/D-ambitious-4fa0a4.svg) |
 -->
 
 ## Contributing
