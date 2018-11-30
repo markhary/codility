@@ -26,7 +26,10 @@ Here are my solutions to the codility lessons.  You can find the lessons [here](
 | [MinAvgTwoSlice](https://app.codility.com/programmers/lessons/5-prefix_sums/min_avg_two_slice/) | [MinAvgTwoSlice.cpp](Lesson%2005%20-%20Prefix%20Sums/MinAvgTwoSlice.cpp) | 60% | 100% | 20% | O(N<sup>2</sup>) |
 | [CountDiv](https://app.codility.com/programmers/lessons/5-prefix_sums/count_div/) | []() | - | - | - | - |
 | **Lesson 6 - Sorting** | | | | | |
-|||||||
+| [Distinct](https://app.codility.com/programmers/lessons/6-sorting/distinct/) | [Distinct.cpp](Lesson%2006%20-%20Sorting/Distinct.cpp) | 100% | 100% | 100% | O(N) or O(N*log(N)) |
+| [Triangle](https://app.codility.com/programmers/lessons/6-sorting/triangle/) | []() | - | - | - | - |
+| [MaxProductofThree](https://app.codility.com/programmers/lessons/6-sorting/max_product_of_three/) | []() | - | - | - | - |
+| [NumberOfDiscIntersections](https://app.codility.com/programmers/lessons/6-sorting/number_of_disc_intersections/) | []() | - | - | - | - |
 | **Lesson 7 - Stacks and Queues** | | | | | |
 |||||||
 | **Lesson 8 - Leader** | | | | | |
@@ -49,6 +52,9 @@ Here are my solutions to the codility lessons.  You can find the lessons [here](
 |||||||
 | **Lesson 17 - Dynamic programming** | | | | | |
 |||||||
+| *Lesson Template* | | | | | |
+| []() | []() | - | - | - | - |
+
 
 
 ## Contributing
