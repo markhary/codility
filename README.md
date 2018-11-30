@@ -27,7 +27,7 @@ Here are my solutions to the codility lessons.  You can find the lessons [here](
 | [CountDiv](https://app.codility.com/programmers/lessons/5-prefix_sums/count_div/) | []() | - | - | - | - |
 | **Lesson 6 - Sorting** | | | | | |
 | [Distinct](https://app.codility.com/programmers/lessons/6-sorting/distinct/) | [Distinct.cpp](Lesson%2006%20-%20Sorting/Distinct.cpp) | 100% | 100% | 100% | O(N) or O(N*log(N)) |
-| [Triangle](https://app.codility.com/programmers/lessons/6-sorting/triangle/) | [Triangle.cpp](Lesson%2006%20-%20Sorting/Triangle.cpp) | 0% | 0% | 0% | N/A |
+| [Triangle](https://app.codility.com/programmers/lessons/6-sorting/triangle/) | [Triangle.cpp](Lesson%2006%20-%20Sorting/Triangle.cpp) | 100% | 100% | 100% | O(N*log(N)) |
 | [MaxProductofThree](https://app.codility.com/programmers/lessons/6-sorting/max_product_of_three/) | []() | - | - | - | - |
 | [NumberOfDiscIntersections](https://app.codility.com/programmers/lessons/6-sorting/number_of_disc_intersections/) | []() | - | - | - | - |
 | **Lesson 7 - Stacks and Queues** | | | | | |
