@@ -38,7 +38,7 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 | [StoneWall](https://app.codility.com/programmers/lessons/7-stacks_and_queues/stone_wall/).[cpp](Lesson%2007%20-%20Stacks%20And%20Queues/StoneWall.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%29-lightgrey.svg) |
 | [Fish](https://app.codility.com/programmers/lessons/7-stacks_and_queues/stone_wall/).[cpp](Lesson%2007%20-%20Stacks%20And%20Queues/Fish.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%29-lightgrey.svg) |
 | **Lesson 8 - Leader** | |
-| [EquiLeader]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| [EquiLeader](https://app.codility.com/programmers/lessons/8-leader/equi_leader/).[cpp](Lesson%2008%20-%20Leader/EquiLeader.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%29-lightgrey.svg) |
 | [Dominator]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
 | **Lesson 9 - Maximum Slice Problem** | |
 | [MaxSliceSum]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
