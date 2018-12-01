@@ -41,7 +41,7 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 | [EquiLeader](https://app.codility.com/programmers/lessons/8-leader/equi_leader/).[cpp](Lesson%2008%20-%20Leader/EquiLeader.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%29-lightgrey.svg) |
 | [Dominator]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
 | **Lesson 9 - Maximum Slice Problem** | |
-| [MaxSliceSum]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| [MaxSliceSum](https://app.codility.com/programmers/lessons/9-maximum_slice_problem/max_slice_sum/).[cpp](Lesson%2009%20-%20Leader/MaxSliceSum.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%29-lightgrey.svg) |
 | [MaxProfit]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
 | [MaxDoubleSliceSum]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
 | **Lesson 10 - Prime and Composite Numbers** | |
