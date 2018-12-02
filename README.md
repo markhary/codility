@@ -62,7 +62,7 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 | [MinMaxDivision]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
 | [NailingPlanks]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
 | **Lesson 15 - Caterpillar Method** | |
-| [AbsDistinct](https://app.codility.com/programmers/lessons/15-caterpillar_method/abs_distinct/).[cpp](Lesson%2012%20-%20Caterpillar%20Method/AbsDistinct.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| [AbsDistinct](https://app.codility.com/programmers/lessons/15-caterpillar_method/abs_distinct/).[cpp](Lesson%2012%20-%20Caterpillar%20Method/AbsDistinct.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%29%20or%20O%28N%2Alog%28N%29%29-lightgrey.svg) |
 | [CountDistinctSlices]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
 | [CountTriangles]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
 | [MinAbsSumOfTwo]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
