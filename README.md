@@ -81,7 +81,7 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 -->
 
 ## Contributing
-[Contributing](CONTRIBUTING.md)
+You are welcome to contribute provided you accept the [Contributor Covenant Code of Conduct](CONTRIBUTING.md).
 
 ## License
-[License](LICENSE.md)
+This repository is licensed under [The Unlicense](LICENSE.md)

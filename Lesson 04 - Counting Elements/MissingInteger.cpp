@@ -5,6 +5,9 @@
 // Performance: 100%
 // Detected time complexity: O(N) or O(N * log(N))
 //
+#include <vector>
+
+using namespace std;
 
 int solution(vector<int> &A) {
 	const int N = 1000001;
