@@ -39,7 +39,7 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 | [Fish](https://app.codility.com/programmers/lessons/7-stacks_and_queues/stone_wall/).[cpp](Lesson%2007%20-%20Stacks%20And%20Queues/Fish.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%29-lightgrey.svg) |
 | **Lesson 8 - Leader** | |
 | [EquiLeader](https://app.codility.com/programmers/lessons/8-leader/equi_leader/).[cpp](Lesson%2008%20-%20Leader/EquiLeader.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%29-lightgrey.svg) |
-| [Dominator]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| [Dominator](https://app.codility.com/programmers/lessons/8-leader/dominator/).[cpp](Lesson%2008%20-%20Leader/Dominator.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%2Alog%28N%29%29%20or%20O%28N%29-lightgrey.svg) |
 | **Lesson 9 - Maximum Slice Problem** | |
 | [MaxSliceSum](https://app.codility.com/programmers/lessons/9-maximum_slice_problem/max_slice_sum/).[cpp](Lesson%2009%20-%20Leader/MaxSliceSum.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%29-lightgrey.svg) |
 | [MaxProfit]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
@@ -84,4 +84,4 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 You are welcome to contribute provided you accept the [Contributor Covenant Code of Conduct](CONTRIBUTING.md).
 
 ## License
-This repository is licensed under [The Unlicense](LICENSE.md)
+This repository is licensed under [The Unlicense](LICENSE.md)A.
