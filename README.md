@@ -46,7 +46,7 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 | [MaxDoubleSliceSum]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
 | **Lesson 10 - Prime and Composite Numbers** | |
 | [CountFactors](https://app.codility.com/programmers/lessons/10-prime_and_composite_numbers/count_factors/).[cpp](Lesson%2010%20-%20Prime%20And%20Composite%20Numbers/CountFactors.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28sqrt%28N%29%29-lightgrey.svg) |
-| [MinPerimeterRectangle]() []() | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) |
+| [MinPerimeterRectangle](https://app.codility.com/programmers/lessons/10-prime_and_composite_numbers/min_perimeter_rectangle/).[cpp](Lesson%2010%20-%20Prime%20And%20Composite%20Numbers/MinPerimeterRectangle.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28sqrt%28N%29%29-lightgrey.svg) |
 | [Peaks]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
 | [Flags]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
 | **Lesson 11 - Sieve Of Eratosthenes** | |
