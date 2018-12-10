@@ -31,7 +31,7 @@ int solution(vector<int> &A) {
     long long int maxEnding = 0;
     long long int maxSlice = 0;
 
-    // OK, it is a positive number, so use the pattern described in Lesson9
+    // OK, it is a positive number, so use the pattern described in Lesson 9
     const int N = A.size();
     for (int i=0; i<N; i++) {
         // Slice not allowed to be empty
