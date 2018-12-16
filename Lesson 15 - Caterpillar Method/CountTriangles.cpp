@@ -65,26 +65,12 @@ int solution(vector<int> &A) {
         // knowing that when R > Q+1, then all of the A[Q] .. A[R-1] are
         // also solutions and we can just add them to the next iteration
         for (int q=(p+1); q<(N-1); q++) {
-            // This means Q caught up to R and we didn't find any triangles
-            // in the last loop.  Keep incrementing R
-            if ( q == r ) {
-                r++;
-            }
-            // This means we looped and R>(Q+1)
-            if ( r > (q+1) ) {
-                // Add in all of the previous ones so we don't need to check again
-                // This gets decremented to account for Q incrementing
-                triangles += (r-q-1);
-            }
             // Stop if R reaches the end or if A[P] <= A[R]-A[Q]
             while ( (r<N) && (A[p] > (A[r]-A[q])) ) {
                 // Increment the triangles and keep pushing R out to the right
-                triangles++;
                 r++;
             }
-            if ( r == N) {
-                r--;
-            }
+            triangles += (r-q-1);
         }
     }
     
