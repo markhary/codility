@@ -50,7 +50,7 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 | [Peaks]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
 | [Flags]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
 | **Lesson 11 - Sieve Of Eratosthenes** | |
-| [CountNonDivisible]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
+| [CountNonDivisible](https://app.codility.com/programmers/lessons/11-sieve_of_eratosthenes/count_non_divisible/).[cpp](Lesson%2011%20-%20Sieve%20Of%20Eratosthenes%/CountNonDivisible.cpp) | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%2Alog%28N%29%29-lightgrey.svg)|
 | [CountSemiprimes]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
 | **Lesson 12 - Euclidean Algorithm** | |
 | [ChocolatesByNumbers](https://app.codility.com/programmers/lessons/12-euclidean_algorithm/chocolates_by_numbers/).[cpp](Lesson%2012%20-%20Euclidean%20Algorithm/ChocolatesByNumbers.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28log%28N%2BM%29%29-lightgrey.svg) |
