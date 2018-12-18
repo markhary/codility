@@ -56,7 +56,7 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 | [ChocolatesByNumbers](https://app.codility.com/programmers/lessons/12-euclidean_algorithm/chocolates_by_numbers/).[cpp](Lesson%2012%20-%20Euclidean%20Algorithm/ChocolatesByNumbers.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28log%28N%2BM%29%29-lightgrey.svg) |
 | [CommonPrimeDivisors]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
 | **Lesson 13 - Fibonacci Numbers** | |
-| [FibFrog]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
+| [FibFrog](https://app.codility.com/programmers/lessons/13-fibonacci_numbers/fib_frog/).[cpp](Lesson%2013%20-%20Fibonacci%20Numbers/FibFrog.cpp) | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%2Alog%28N%29%29-lightgrey.svg) |
 | [Ladder]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
 | **Lesson 14 - Binary Search Algorithm** | |
 | [MinMaxDivision]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
