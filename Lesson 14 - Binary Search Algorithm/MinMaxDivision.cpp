@@ -12,21 +12,13 @@
 #include <numeric>
 #include <vector>
 
+#include "macros.h"
+
 #define PRINT_BLOCK(X) { \
 	cout << #X << ": [ "; \
 	for (const auto &x: X) { cout << "{" << x.first << ", " << x.last << "} "; } \
 	cout << "]" << endl; \
 }
-
-#define PRINT_VECTOR(X) { \
-	cout << #X << ": ["; \
-	for (const auto &x: X) { cout << x << ", "; } \
-	cout << "]" << endl; \
-}
-
-#define PRINT_VAR(X) { cout << #X << ": " << X << endl; }
-
-#define PRINT_B(b) { cout << b << ": ";}
 
 using namespace std;
 

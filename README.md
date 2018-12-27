@@ -80,6 +80,18 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 | []() []() | ![](https://img.shields.io/badge/D-ambitious-4fa0a4.svg) |
 -->
 
+## Testing
+Tests are located in the `test` directory.  Tests have the same name as the Lesson.  You can build the tests for your favorite development environment using `cmake`.  I build them as follows:
+
+```shell
+mkdir build
+cd build
+cmake ..
+make
+```
+
+Tests will be created in the `bin` directory.
+
 ## Contributing
 You are welcome to contribute provided you accept the [Contributor Covenant Code of Conduct](CONTRIBUTING.md).
 
