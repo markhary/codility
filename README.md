@@ -80,12 +80,26 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 | []() []() | ![](https://img.shields.io/badge/D-ambitious-4fa0a4.svg) |
 -->
 
-## Testing
-Tests are located in the `test` directory.  Tests have the same name as the Lesson.  You can build the tests for your favorite development environment using `cmake`.  I build them as follows:
+## Tests
+Tests are located in the `test` directory.  Tests have the same name as the Lesson.  
+
+### Dependencies
+
+Download [gflags](https://gflags.github.io/gflags/) to the packages directory, or update *CMakeLists.txt* accordingly.
+
+```
+mkdir test/packages
+cd test/packages
+git clone https://github.com/gflags/gflags.git
+cd ../..
+```
+
+### Building
+You can build the tests for your favorite development environment using `cmake`.  I build them as follows:
 
 ```shell
-mkdir build
-cd build
+mkdir test/build
+cd test/build
 cmake ..
 make
 ```
@@ -96,4 +110,7 @@ Tests will be created in the `bin` directory.
 You are welcome to contribute provided you accept the [Contributor Covenant Code of Conduct](CONTRIBUTING.md).
 
 ## License
-This repository is licensed under [The Unlicense](LICENSE.md).
+This repository is licensed under [The Unlicense](LICENSE.md):
+
+## Acknowledgements
+* Thank you to the [gflags](https://gflags.github.io/gflags/) command line parsing library
