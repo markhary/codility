@@ -24,5 +24,9 @@ endif(NOT CMAKE_BUILD_TYPE)
 
 include_directories(include)
 add_subdirectory(packages/gflags)
-add_executable (MinMaxDivision src/MinMaxDivision.cpp ../Lesson\ 14\ -\ Binary\ Search\ Algorithm/MinMaxDivision.cpp)
-target_link_libraries(MinMaxDivision gflags::gflags)
+
+#
+# Lesson 14 - Binary Search Algorithm - MinMaxDivision
+#
+add_executable (MinMaxDivisionTest src/MinMaxDivisionTest.cpp ../Lesson\ 14\ -\ Binary\ Search\ Algorithm/MinMaxDivision.cpp)
+target_link_libraries(MinMaxDivisionTest gflags::gflags)

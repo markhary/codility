@@ -81,7 +81,7 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 -->
 
 ## Tests
-Tests are located in the `test` directory.  Tests have the same name as the Lesson.  
+Tests are located in the `test` directory.  Tests have the same name as the Lesson with the word Test concatenated, e.g. `LessonTest`.  
 
 ### Dependencies
 
@@ -104,7 +104,7 @@ cmake ..
 make
 ```
 
-Tests will be created in the `bin` directory.
+Tests will be created in the `bin` directory located wherever you ran cmake from (`test\build\bin` in the example above).
 
 ## Contributing
 You are welcome to contribute provided you accept the [Contributor Covenant Code of Conduct](CONTRIBUTING.md).

@@ -29,93 +29,70 @@ struct Block {
 
 // Used to debug brute force algorithm
 vector<Block> gMinimalBlocks;
+vector<int> gMinimalBlockVector;
 vector<int> gMinimalSums;
 
-vector<int> calculateDifferences (const vector<int> A)
-{
-    vector<int> diffs(A.size()-1, 0);
-    for (int i=1; i<(int)A.size(); i++) {
-        diffs[i-1] = A[i]-A[i-1];
-    }
-    return diffs;
-}
+//////////////////////////////////////////////////////////
+// Brute Force Using Vector
+//////////////////////////////////////////////////////////
+
+// This is 100% correct, but fails performance tests
 
 //
 // Brute force solution looks like
-//   for (I = [0 .. N-1])   // left index anchored at 0
-//     for (J = [I+1 .. N-1])
+//   for (I = [0 .. N-K])   // left index anchored at 0
+//     for (J = [I+1 .. N-K+1])
 //       for (K = [J+1 .. N-1])  // right most element anchored at N-1
 // Where there are K for loops (hence O(N^K) complexity)
 //
 // So turning nested for loop into a recursive function call
 // P is my partial sums and goes from 0 .. N
 //
-int calculateLargeSums(const vector<int> &P, vector<Block> &blocks, 
-		const int b, const int &minimalLargeSum) 
+void calculateLargeSums(const vector<int> &P, vector<int> &blocks, 
+        vector<int> &sums, const int b, int &minimalLargeSum,
+        int &maxIndex) 
 {
 	const int K = blocks.size();
 	const int N = P.size() - 1;  // Because P.size() is actually one larger than N
 
+	//	Mimic all of the actual "for (..; ..; ..) {} loops
 	// This is the innermost for loop
-	if ( b == K ) {
-		int innerLargeSum = 0;
-
+	if ( b == (K-1) ) {
 		// calculate sum for each block
-		vector<int> sums(K, 0);
-		for (int k=0; k<K; k++) {
-			sums[k] = P[blocks[k].last] - P[blocks[k].first];
+		for (int k=1; k<K; k++) {
+			sums[k-1] = P[blocks[k]] - P[blocks[k-1]];
 		}
+
+        cout << endl;
+        PRINT_VECTOR(blocks);
+        PRINT_VECTOR(sums);
 
 		// large sum is going to be max of sums
 		auto maxSum = max_element(std::begin(sums), std::end(sums));
-		innerLargeSum = *maxSum;
+		int largeSum = *maxSum;
+        maxIndex = maxSum-sums.begin()+1;
 
-        if ( innerLargeSum < minimalLargeSum ) {
-            gMinimalBlocks = blocks;
+        if ( largeSum < minimalLargeSum ) {
+            gMinimalBlockVector = blocks;
             gMinimalSums = sums;
+            minimalLargeSum = largeSum;
         }
-
-		return min(innerLargeSum, minimalLargeSum);
-	}
-
-	//	Mimic all of the actual "for (..; ..; ..) {} loops
-
-	// Modify the first and last index based on where we are in the recursion
-	// First block is anchored to 0
-	if ( b == 0 ) {
-		blocks[b].first = 0;
-	} else if (blocks[b-1].last <= N) {
-		blocks[b].first = blocks[b-1].last;
 	} else {
-		// keep first at N
-	}
+        // A couple more things happen when this is the Kth call, which is the
+        // innermost for loop
+        // 1. Print the blocks structure so we can see where we are
+        // 2. Do the calculation of the large blocks and return the latest
+        //    minimumLargeSum
 
-	// Last block is anchored to N
-	if ( b == (K-1) ) {
-		blocks[b].last = N;
-	} else if (blocks[b].last <= N) {
-		// Otherwise block starts off null
-		blocks[b].last = blocks[b].first;
-	} else {
-		// keep last at N
-	}
+        for (int i = (blocks[b-1]+1); i <= (N-(K-1)+b); i++) {
+            blocks[b] = i;
+            calculateLargeSums(P, blocks, sums, b+1, minimalLargeSum, maxIndex);
 
-	// A couple more things happen when this is the Kth call, which is the
-	// innermost for loop
-	// 1. Print the blocks structure so we can see where we are
-	// 2. Do the calculation of the large blocks and return the latest
-	//    minimumLargeSum
-	int newMinimalLargeSum = minimalLargeSum;
-
-	int largeSum = 0;
-	for (int i = blocks[b].last; i <= N; i++) {
-		blocks[b].last = i;
-		largeSum = calculateLargeSums(P, blocks, b+1, newMinimalLargeSum);
-
-		newMinimalLargeSum = min(largeSum, newMinimalLargeSum);
-	}
-
-	return newMinimalLargeSum;
+            if ( maxIndex < b ) {
+                break;
+            }
+        }
+    }
 }
 
 //
@@ -165,18 +142,22 @@ int bruteForce(int K, int M, vector<int> &A)
 	// Instantiate our K blocks
 	// Cap K at N since it makes no sense to have more blocks than numbers
 	K = min(K, N);
-	vector<Block> blocks(K);
+	vector<int> blocks(K+1, 0);
+    blocks[0] = 0;
+    blocks[K] = N;
 
-	minimalLargeSum = calculateLargeSums(P, blocks, 0, minimalLargeSum);
+	vector<int> sums(K, 0);
 
-    PRINT_BLOCK(gMinimalBlocks);
-    PRINT_VECTOR(gMinimalSums);
-    vector<int> diffs = calculateDifferences(gMinimalSums);
-    PRINT_VECTOR(diffs);
+    // This starts on the first index, since index[0] doesn't move
+    int maxIndex;
+	calculateLargeSums(P, blocks, sums, 1, minimalLargeSum, maxIndex);
 
 	return minimalLargeSum;
 }
 
+//
+// Our efficient solution
+//
 int solution(int K, int M, vector<int> &A)
 {
 	const int N = A.size();
@@ -301,12 +282,6 @@ int solution(int K, int M, vector<int> &A)
 	    int innerMinimalLargeSum = *max_element(std::begin(sums), std::end(sums));
         PRINT_VAR(innerMinimalLargeSum);
     
-        vector<int> diffs = calculateDifferences(sums);
-        PRINT_VECTOR(diffs);
-    
-        int diff = std::accumulate(diffs.begin(), diffs.end(), 0);
-        PRINT_VAR(diff);
-
         if ( innerMinimalLargeSum < minimalLargeSum ) {
             minimalLargeSum = innerMinimalLargeSum;
             furtherReductionPossible = true;

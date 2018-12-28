@@ -1,3 +1,6 @@
+//
+// Test executable for Lesson 14 - Binary Search Algorithm/MinMaxDivision.cpp
+//
 #include <iostream>
 #include <vector>
 #include <chrono>
@@ -14,9 +17,15 @@ DEFINE_int32(test, 0, "Specific test to run, 0 is all");
 
 using namespace std;
 
+//
+// These should match the function signatures in MinMaxDivision.cpp
+//
 int solution(int, int, vector<int> &);
 int bruteForce(int, int, vector<int> &);
 
+//
+// Run the actual test
+//
 void test(int testNum, int runTestNum, int K, int M, vector<int> A, bool assert = false, bool printA = false, bool runBruteForce = true) 
 {
     if ( runTestNum && testNum != runTestNum ) {
@@ -50,7 +59,13 @@ void test(int testNum, int runTestNum, int K, int M, vector<int> A, bool assert 
 	cout << "  == == == == == == == == == ==  " << endl;
 	cout << "calculating brute force answer..." << endl;
    	auto correct = bruteForce(K, M, A);
+
+	cout << "=================================" << endl;
+    cout << "Test " << testNum << " Results" << endl;
+    cout << endl;
+
 	PRINT_VAR(correct);
+
     cout << answer << " =? " << correct << endl;
 
 	if (assert) {
@@ -84,6 +99,9 @@ vector<int> generateOneOrMSequence(int N, int M, double prob)
     return A;
 }
 
+//
+// Configure tests to run
+//
 int main(int argc, char **argv) 
 {
 
