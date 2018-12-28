@@ -5,6 +5,13 @@
 
 #include "macros.h"
 
+//
+// Configure command line arguments
+//
+#include "gflags/gflags.h"
+DEFINE_bool(assert, false, "If set, tests will fail if they do no match the brute force method");
+DEFINE_int32(test, 0, "Specific test to run, 0 is all");
+
 using namespace std;
 
 int solution(int, int, vector<int> &);
@@ -79,51 +86,32 @@ vector<int> generateOneOrMSequence(int N, int M, double prob)
 
 int main(int argc, char **argv) 
 {
-	bool assert = false;
-    int runTestNum = 0;
-    bool printA = true;
-    bool runBruteForce = true;
+
+    gflags::SetUsageMessage("Runs the tests for MinMaxDivision");
+    gflags::ParseCommandLineFlags(&argc, &argv, true);
 
     cout << "========================================" << endl;
     cout << "==              START TEST            ==" << endl;
     cout << "========================================" << endl;
 
-	if (argc == 2) {
-		if ( !strcmp(argv[1], "true") ) {
-			assert = true;
-		}
-	}
-
-	if (argc == 3) {
-	   runTestNum = atoi(argv[2]);
-	}
-
-	if (argc == 4) {
-        assert = false;
-        printA = false;
-        runBruteForce = false;
-
-		int N = atoi(argv[3]);
-		int M = atoi(argv[2]);
-		int K = atoi(argv[1]);
-		vector<int> A = generateRandomSequence(N, M);
-		test(1, 0, K, M, A, assert, printA, runBruteForce);
-		exit(0);
-	}	
-
+    // We don't want to print the A vector for all tests (can be quite large)
+    // Also, we do want to skip brute force for some tests too (where it is slow)
+    bool printA = true;
 	int testNum = 1;
-   	test(testNum++, runTestNum, 1, 5, {0, 0}, assert, printA, runBruteForce); 
-   	test(testNum++, runTestNum, 4, 10, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, assert, printA, runBruteForce); 
-   	test(testNum++, runTestNum, 4, 10, {10, 9, 8, 7, 6, 5, 4, 3, 2, 1}, assert, printA, runBruteForce); 
-   	test(testNum++, runTestNum, 1, 5, {2, 1, 5, 1, 2, 2, 2}, assert, printA, runBruteForce); 
-   	test(testNum++, runTestNum, 2, 5, {2, 1, 5, 1, 2, 2, 2}, assert, printA, runBruteForce); 
-   	test(testNum++, runTestNum, 3, 5, {2, 1, 5, 1, 2, 2, 2}, assert, printA, runBruteForce); 
-   	test(testNum++, runTestNum, 4, 5, {2, 1, 5, 1, 2, 2, 2}, assert, printA, runBruteForce); 
-   	test(testNum++, runTestNum, 5, 5, {2, 1, 5, 1, 2, 2, 2}, assert, printA, runBruteForce); 
-   	test(testNum++, runTestNum, 20, 5, {0, 5, 0}, assert, printA, runBruteForce); 
-   	test(testNum++, runTestNum, 4000, 5, {0, 5, 0}, assert, printA, runBruteForce); 
-   	test(testNum++, runTestNum, 10000, 5, {2, 1, 5, 1, 2, 2, 2}, assert, printA, runBruteForce); 
-   	test(testNum++, runTestNum, 10000, 10000, {0, 10000, 0}, assert, printA, runBruteForce); 
+    bool runBruteForce = true;
+
+   	test(testNum++, FLAGS_test, 1, 5, {0, 0}, FLAGS_assert, printA, runBruteForce); 
+   	test(testNum++, FLAGS_test, 4, 10, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, FLAGS_assert, printA, runBruteForce); 
+   	test(testNum++, FLAGS_test, 4, 10, {10, 9, 8, 7, 6, 5, 4, 3, 2, 1}, FLAGS_assert, printA, runBruteForce); 
+   	test(testNum++, FLAGS_test, 1, 5, {2, 1, 5, 1, 2, 2, 2}, FLAGS_assert, printA, runBruteForce); 
+   	test(testNum++, FLAGS_test, 2, 5, {2, 1, 5, 1, 2, 2, 2}, FLAGS_assert, printA, runBruteForce); 
+   	test(testNum++, FLAGS_test, 3, 5, {2, 1, 5, 1, 2, 2, 2}, FLAGS_assert, printA, runBruteForce); 
+   	test(testNum++, FLAGS_test, 4, 5, {2, 1, 5, 1, 2, 2, 2}, FLAGS_assert, printA, runBruteForce); 
+   	test(testNum++, FLAGS_test, 5, 5, {2, 1, 5, 1, 2, 2, 2}, FLAGS_assert, printA, runBruteForce); 
+   	test(testNum++, FLAGS_test, 20, 5, {0, 5, 0}, FLAGS_assert, printA, runBruteForce); 
+   	test(testNum++, FLAGS_test, 4000, 5, {0, 5, 0}, FLAGS_assert, printA, runBruteForce); 
+   	test(testNum++, FLAGS_test, 10000, 5, {2, 1, 5, 1, 2, 2, 2}, FLAGS_assert, printA, runBruteForce); 
+   	test(testNum++, FLAGS_test, 10000, 10000, {0, 10000, 0}, FLAGS_assert, printA, runBruteForce); 
 
     // Calculated array tests
     //
@@ -133,26 +121,26 @@ int main(int argc, char **argv)
 	int K = 5;
     {
 		vector<int> A = generateRandomSequence(N, M);
-	    test(testNum++, runTestNum, K, M, A, assert, printA, runBruteForce);
+	    test(testNum++, FLAGS_test, K, M, A, FLAGS_assert, printA, runBruteForce);
     }
 
     {
         N = 10;
         M = 10000;
 		vector<int> A = generateRandomSequence(N, M);
-        test(testNum++, runTestNum, K, M, A, assert, printA, runBruteForce);
+        test(testNum++, FLAGS_test, K, M, A, FLAGS_assert, printA, runBruteForce);
     }
 
     {
         N = 20;
         M = 10000;
 		vector<int> A = generateOneOrMSequence(N, M, 0.90);
-        test(testNum++, runTestNum, K, M, A, assert, printA, runBruteForce);
+        test(testNum++, FLAGS_test, K, M, A, FLAGS_assert, printA, runBruteForce);
     }
 
 	// Don't run brute force test below here because brute force
     // is O(N^K)
-    assert = false;
+    FLAGS_assert = false;
     printA = false;
     runBruteForce = false;
 
@@ -166,7 +154,7 @@ int main(int argc, char **argv)
         for (int i=0; i<N; i++) {
             T[i] = M;
         }
-        test(testNum++, runTestNum, K, M, T, assert, printA, runBruteForce);
+        test(testNum++, FLAGS_test, K, M, T, FLAGS_assert, printA, runBruteForce);
     }
 
     // Make it so that K blocks need to be calculated
@@ -178,18 +166,18 @@ int main(int argc, char **argv)
         for (int i=0; i<N; i++) {
             T[i] = M;
         }
-        test(testNum++, runTestNum, K, M, T, assert, printA, runBruteForce);
+        test(testNum++, FLAGS_test, K, M, T, FLAGS_assert, printA, runBruteForce);
     }
 
     // Test binary values
     {
 		vector<int> A = generateRandomSequence(N, 2);
-        test(testNum++, runTestNum, K, M, T, assert, printA, runBruteForce);
+        test(testNum++, FLAGS_test, K, M, T, FLAGS_assert, printA, runBruteForce);
     }
     
     // Test random values from [0 .. M] but with K=10000
     {
         vector<int> A = generateRandomSequence(N, M);
-        test(testNum++, runTestNum, K, M, A, assert, printA, runBruteForce);
+        test(testNum++, FLAGS_test, K, M, A, FLAGS_assert, printA, runBruteForce);
     }
 }

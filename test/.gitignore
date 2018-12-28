@@ -2,6 +2,7 @@
 obj
 bin
 
+# Added just in case one does an in-source cmake
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
@@ -14,3 +15,4 @@ compile_commands.json
 CTestTestfile.cmake
 
 build
+packages

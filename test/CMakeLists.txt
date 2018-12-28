@@ -11,7 +11,7 @@ set(CMAKE_CXX_EXTENSIONS OFF) #...without compiler extensions like gnu++11
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic -Wextra -Werror")
 
 #
-# Put the binaries into "bin/" and the object files into "obj/
+# Put the binaries into "bin/"
 #
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "bin/")
 
@@ -23,5 +23,6 @@ if(NOT CMAKE_BUILD_TYPE)
 endif(NOT CMAKE_BUILD_TYPE)
 
 include_directories(include)
-
+add_subdirectory(packages/gflags)
 add_executable (MinMaxDivision src/MinMaxDivision.cpp ../Lesson\ 14\ -\ Binary\ Search\ Algorithm/MinMaxDivision.cpp)
+target_link_libraries(MinMaxDivision gflags::gflags)
