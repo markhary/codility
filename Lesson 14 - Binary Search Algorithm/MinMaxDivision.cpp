@@ -22,15 +22,10 @@
 
 using namespace std;
 
-struct Block {
-	int first;
-	int last;
-};
-
 // Used to debug brute force algorithm
-vector<Block> gMinimalBlocks;
-vector<int> gMinimalBlockVector;
+vector<int> gMinimalBlocks;
 vector<int> gMinimalSums;
+vector<int> gSums;
 
 //////////////////////////////////////////////////////////
 // Brute Force Using Vector
@@ -49,8 +44,7 @@ vector<int> gMinimalSums;
 // P is my partial sums and goes from 0 .. N
 //
 void calculateLargeSums(const vector<int> &P, vector<int> &blocks, 
-        vector<int> &sums, const int b, int &minimalLargeSum,
-        int &maxIndex) 
+        const int b, int &minimalLargeSum, int &maxIndex) 
 {
 	const int K = blocks.size();
 	const int N = P.size() - 1;  // Because P.size() is actually one larger than N
@@ -60,21 +54,17 @@ void calculateLargeSums(const vector<int> &P, vector<int> &blocks,
 	if ( b == (K-1) ) {
 		// calculate sum for each block
 		for (int k=1; k<K; k++) {
-			sums[k-1] = P[blocks[k]] - P[blocks[k-1]];
+			gSums[k-1] = P[blocks[k]] - P[blocks[k-1]];
 		}
 
-        cout << endl;
-        PRINT_VECTOR(blocks);
-        PRINT_VECTOR(sums);
-
 		// large sum is going to be max of sums
-		auto maxSum = max_element(std::begin(sums), std::end(sums));
+		auto maxSum = max_element(std::begin(gSums), std::end(gSums));
 		int largeSum = *maxSum;
-        maxIndex = maxSum-sums.begin()+1;
+        maxIndex = maxSum- gSums.begin() + 1;
 
         if ( largeSum < minimalLargeSum ) {
-            gMinimalBlockVector = blocks;
-            gMinimalSums = sums;
+            gMinimalBlocks = blocks;
+            gMinimalSums = gSums;
             minimalLargeSum = largeSum;
         }
 	} else {
@@ -83,10 +73,10 @@ void calculateLargeSums(const vector<int> &P, vector<int> &blocks,
         // 1. Print the blocks structure so we can see where we are
         // 2. Do the calculation of the large blocks and return the latest
         //    minimumLargeSum
-
-        for (int i = (blocks[b-1]+1); i <= (N-(K-1)+b); i++) {
+        int iMax = N-(K-1)+b;
+        for (int i = (blocks[b-1]+1); i <= iMax; i++) {
             blocks[b] = i;
-            calculateLargeSums(P, blocks, sums, b+1, minimalLargeSum, maxIndex);
+            calculateLargeSums(P, blocks, b+1, minimalLargeSum, maxIndex);
 
             if ( maxIndex < b ) {
                 break;
@@ -146,17 +136,17 @@ int bruteForce(int K, int M, vector<int> &A)
     blocks[0] = 0;
     blocks[K] = N;
 
-	vector<int> sums(K, 0);
+	gSums.resize(K, 0);
 
     // This starts on the first index, since index[0] doesn't move
     int maxIndex;
-	calculateLargeSums(P, blocks, sums, 1, minimalLargeSum, maxIndex);
+	calculateLargeSums(P, blocks, 1, minimalLargeSum, maxIndex);
 
 	return minimalLargeSum;
 }
 
 //
-// Our efficient solution
+// Our efficient solution using Binary Search
 //
 int solution(int K, int M, vector<int> &A)
 {
@@ -181,49 +171,38 @@ int solution(int K, int M, vector<int> &A)
 		return *maxElement;
     }
 
-    // OK - we need K blocks
-	vector<Block> blocks(K);
+    // OK - we need K+1 blocks
+	vector<int> blocks(K+1);
+    blocks[0] = 0;
+    blocks[K] = rankA;
 
     // Going to put the average sum (or close to it)
     double searchValue = 0.0;
     double averageSum = ((double)(P.back()) / K );
     PRINT_VAR(averageSum);
-    for (int k=0; k<K; k++) {
+    for (int k=1; k<K; k++) {
         // The average sum of the blocks we are looking for is
         // (total sum)/(num blocks)
         searchValue += averageSum;
         PRINT_VAR(searchValue);
 
-        // First block first is 0
-        // Last block last is rankA
-        if ( k == 0 ) {
-            blocks[k].first = 0;
-        } else {
-            blocks[k].first = blocks[k-1].last;
-            // it is equal to the end of the last block
-        }
-
-        if ( k == (K-1) ) {
-            blocks[k].last = rankA;
-        } else {
-            // Has to be at least one element, because rank > K
-            // Go and find the element that is closest to the average as searched for
-            // above
-            int searchResult = upper_bound(P.begin(), P.end(), searchValue)-P.begin();
-            int candidate = ((abs(searchValue-P[searchResult-1])) <= (abs(searchValue-P[searchResult]))) ?
-                            searchResult-1 : searchResult;
-            blocks[k].last = max((int) blocks[k].first+1, candidate);
-        }
+        // Has to be at least one element, because rank > K
+        // Go and find the element that is closest to the average as searched for
+        // above
+        int searchResult = upper_bound(P.begin(), P.end(), searchValue)-P.begin();
+        int candidate = ((abs(searchValue-P[searchResult-1])) <= (abs(searchValue-P[searchResult]))) ?
+                        searchResult-1 : searchResult;
+        blocks[k] = max((int) blocks[k-1]+1, candidate);
     }
 	PRINT_VECTOR(P);
-	PRINT_BLOCK(blocks);
+	PRINT_VECTOR(blocks);
 
     vector<int> sums(K, 0);
 
     // calculate sum for each block
-    for (int k=0; k<K; k++) {
-        sums[k] = P[blocks[k].last] - P[blocks[k].first];
-    }
+	for (int k=0; k<K; k++) {
+		sums[k] = P[blocks[k+1]] - P[blocks[k]];
+	}
     PRINT_VECTOR(sums);
     int minimalLargeSum = *max_element(std::begin(sums), std::end(sums));
     PRINT_VAR(minimalLargeSum);
@@ -242,7 +221,7 @@ int solution(int K, int M, vector<int> &A)
         furtherReductionPossible = false;
 
         // If we make an adjustment, then further reduction is possible
-        for (int k=1; k<K; k++) {
+        for (int k=1; k<(K-1); k++) {
             // If blocks equal continue
             if (sums[k] == sums[k-1]) {
                 continue;
@@ -252,31 +231,31 @@ int solution(int K, int M, vector<int> &A)
             // If positive, take number from block [k] to block [k-1].
             int direction = sums[k]-sums[k-1];
 
-            Block bk = blocks[k];
-            Block bk_1 = blocks[k-1];
+            int b_plus_1 = blocks[k+1];
+            int b = blocks[k];
+            int b_minus_1 = blocks[k-1];
 
-            if ( direction < 0 ) {
-                bk_1.last--;
-                bk.first--;
-            } else {
-                bk_1.last++;
-                bk.first++;
+            // only move index down if there is room
+            if ( (direction < 0) && ((blocks[k-1]) < (blocks[k]-1)) ) {
+                b--;
+            } else if ( ((blocks[k+1]) > (blocks[k]+1)) ) {
+                // only move index up if there is room
+                b++;
             }
 
             // Now check both sums are smaller than the previous max
             // Has to be smaller, cannot be the same
-            int s = P[bk.last]-P[bk.first];
-            int s_1 = P[bk_1.last]-P[bk_1.first];
+            int s = P[b_plus_1]-P[b];
+            int s_1 = P[b]-P[b_minus_1];
             if ( (s<minimalLargeSum) && (s_1<minimalLargeSum) && s && s_1) {
-                blocks[k] = bk;
-                blocks[k-1] = bk_1;
+                blocks[k] = b;
             }
         }
         // calculate sum for each block
         for (int k=0; k<K; k++) {
-            sums[k] = P[blocks[k].last] - P[blocks[k].first];
+            sums[k] = P[blocks[k+1]] - P[blocks[k]];
         }
-	    PRINT_BLOCK(blocks);
+	    PRINT_VECTOR(blocks);
 	    PRINT_VECTOR(sums);
     
 	    int innerMinimalLargeSum = *max_element(std::begin(sums), std::end(sums));

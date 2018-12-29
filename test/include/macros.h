@@ -11,4 +11,6 @@
 
 #define PRINT_VAR(X) { std::cout << #X << ": " << X << std::endl; }
 
+#define SIZEOF(X) { std::cout << "sizeof(" << #X << "): " << sizeof(X) << " bytes" << std::endl; }
+
 #endif

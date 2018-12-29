@@ -56,11 +56,10 @@ void test(int testNum, int runTestNum, int K, int M, vector<int> A, bool assert 
 		return;
 	}
 
-	cout << "  == == == == == == == == == ==  " << endl;
 	cout << "calculating brute force answer..." << endl;
    	auto correct = bruteForce(K, M, A);
 
-	cout << "=================================" << endl;
+    cout << endl;
     cout << "Test " << testNum << " Results" << endl;
     cout << endl;
 
@@ -107,6 +106,12 @@ int main(int argc, char **argv)
 
     gflags::SetUsageMessage("Runs the tests for MinMaxDivision");
     gflags::ParseCommandLineFlags(&argc, &argv, true);
+
+    if ( argc > 1 ) {
+        cerr << "Command line arguments not recognized, please execute:" << endl;
+        cerr << "  " << argv[0] << " --help" << endl;
+        exit(1);
+    }
 
     cout << "========================================" << endl;
     cout << "==              START TEST            ==" << endl;

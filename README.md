@@ -81,7 +81,7 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 -->
 
 ## Tests
-Tests are located in the `test` directory.  Tests have the same name as the Lesson with the word Test concatenated, e.g. `LessonTest`.  
+Tests are located in the `test` directory.  Tests have the same name as the *Lesson* with the word *Test* concatenated, e.g. `LessonTest`.  
 
 ### Dependencies
 
