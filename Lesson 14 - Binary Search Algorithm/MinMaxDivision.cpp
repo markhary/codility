@@ -1,34 +1,21 @@
 // https://app.codility.com/programmers/lessons/14-binary_search_algorithm/min_max_division/
 // 
-// Task Score: 83%
+// Task Score: 100%
 // Correctness: 100%
-// Performance: 66%
+// Performance: 100%
 // Detected time complexity: O(N*log(N+M));
 //
-#include <iostream>
-#include <algorithm>
-#include <cmath>
-#include <limits>
 #include <numeric>
 #include <vector>
-
-#include "macros.h"
-
-#define PRINT_BLOCK(X) { \
-	cout << #X << ": [ "; \
-	for (const auto &x: X) { cout << "{" << x.first << ", " << x.last << "} "; } \
-	cout << "]" << endl; \
-}
 
 using namespace std;
 
 // Used to debug brute force algorithm
 vector<int> gMinimalBlocks;
 vector<int> gMinimalSums;
-vector<int> gSums;
 
 //////////////////////////////////////////////////////////
-// Brute Force Using Vector
+// Brute Force
 //////////////////////////////////////////////////////////
 
 // This is 100% correct, but fails performance tests
@@ -44,7 +31,7 @@ vector<int> gSums;
 // P is my partial sums and goes from 0 .. N
 //
 void calculateLargeSums(const vector<int> &P, vector<int> &blocks, 
-        const int b, int &minimalLargeSum, int &maxIndex) 
+        vector<int> &sums, const int b, int &minimalLargeSum, int &maxIndex) 
 {
 	const int K = blocks.size();
 	const int N = P.size() - 1;  // Because P.size() is actually one larger than N
@@ -54,17 +41,17 @@ void calculateLargeSums(const vector<int> &P, vector<int> &blocks,
 	if ( b == (K-1) ) {
 		// calculate sum for each block
 		for (int k=1; k<K; k++) {
-			gSums[k-1] = P[blocks[k]] - P[blocks[k-1]];
+			sums[k-1] = P[blocks[k]] - P[blocks[k-1]];
 		}
 
 		// large sum is going to be max of sums
-		auto maxSum = max_element(std::begin(gSums), std::end(gSums));
+		auto maxSum = max_element(std::begin(sums), std::end(sums));
 		int largeSum = *maxSum;
-        maxIndex = maxSum- gSums.begin() + 1;
+        maxIndex = maxSum- sums.begin() + 1;
 
         if ( largeSum < minimalLargeSum ) {
             gMinimalBlocks = blocks;
-            gMinimalSums = gSums;
+            gMinimalSums = sums;
             minimalLargeSum = largeSum;
         }
 	} else {
@@ -76,7 +63,7 @@ void calculateLargeSums(const vector<int> &P, vector<int> &blocks,
         int iMax = N-(K-1)+b;
         for (int i = (blocks[b-1]+1); i <= iMax; i++) {
             blocks[b] = i;
-            calculateLargeSums(P, blocks, b+1, minimalLargeSum, maxIndex);
+            calculateLargeSums(P, blocks, sums, b+1, minimalLargeSum, maxIndex);
 
             if ( maxIndex < b ) {
                 break;
@@ -136,140 +123,90 @@ int bruteForce(int K, int M, vector<int> &A)
     blocks[0] = 0;
     blocks[K] = N;
 
-	gSums.resize(K, 0);
+	vector<int> sums(K, 0);
 
     // This starts on the first index, since index[0] doesn't move
     int maxIndex;
-	calculateLargeSums(P, blocks, 1, minimalLargeSum, maxIndex);
+	calculateLargeSums(P, blocks, sums, 1, minimalLargeSum, maxIndex);
 
 	return minimalLargeSum;
 }
 
 //
-// Our efficient solution using Binary Search
+// Implementing a binary search algorithm
+// The check function starts creating blocks and increments the blocks each 
+// time we exceed the maximum sum. Return false if we run out of blocks.
 //
+bool validateSolution (const int K, const vector<int> &A, const int &maxSum)
+{
+    int numBlocks = 1;
+    int sum = 0;
+    for (const auto &a: A) {
+        sum += a;
+        if ( sum > maxSum ) {
+            numBlocks++;
+            sum = a;
+        }
+        if (numBlocks > K) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+// We know the solution will either be:
+// * 0 if we have no non-zero elements
+// * max(A) if K >= rank(A)
+// * Found via binary search, and the answer is going to be between
+//    max(A) and sum(A)
 int solution(int K, int M, vector<int> &A)
 {
 	const int N = A.size();
+    // Cannot figure out a use for M
     M += 0;
+
+    // Going to use B to reduce the rank of A, since 0s do not count toward
+    // anything.  Might as well reduce overhead.
+    vector<int> B;
 
 	// Binary search uses information that data is sorted, so this
 	// means we are going to use partial sums which will be sorted
     // But reduce the number of elements so that Rank(P) = Rank(A)+1;
-	std::vector<int> P(1, 0);
+    int sum = 0;
+    int max = 0;
     for (int i=0; i<N; i++) {
         if (A[i]) {
-            P.push_back( P.back()+A[i] );
+            B.push_back(A[i]);
+            sum+= A[i];
+            max = std::max(max, A[i]);
         }
     }
 
-    int rankA = P.size()-1;
+    // Quick check - if B is empty then return 0
+    if ( !B.size() ) {
+        return 0;
+    }
 
-    // Quick check - if Rank(A) <= K then answer is max(A);
-    if ( rankA <= K ) {
-		auto maxElement = max_element(std::begin(A), std::end(A));
+    // Quick check - if Rank(B) <= K then answer is max(B);
+    if ( (int) B.size() <= K ) {
+		auto maxElement = max_element(std::begin(B), std::end(B));
 		return *maxElement;
     }
 
-    // OK - we need K+1 blocks
-	vector<int> blocks(K+1);
-    blocks[0] = 0;
-    blocks[K] = rankA;
+    // The answer is somewhere between max(A) and sum(A)
+    int lowerBound = max;
+    int upperBound = sum;
 
-    // Going to put the average sum (or close to it)
-    double searchValue = 0.0;
-    double averageSum = ((double)(P.back()) / K );
-    PRINT_VAR(averageSum);
-    for (int k=1; k<K; k++) {
-        // The average sum of the blocks we are looking for is
-        // (total sum)/(num blocks)
-        searchValue += averageSum;
-        PRINT_VAR(searchValue);
-
-        // Has to be at least one element, because rank > K
-        // Go and find the element that is closest to the average as searched for
-        // above
-        int searchResult = upper_bound(P.begin(), P.end(), searchValue)-P.begin();
-        int candidate = ((abs(searchValue-P[searchResult-1])) <= (abs(searchValue-P[searchResult]))) ?
-                        searchResult-1 : searchResult;
-        blocks[k] = max((int) blocks[k-1]+1, candidate);
+    // Implement the classic binary search algorithm
+    while ( lowerBound <= upperBound ) {
+        int candidate = (lowerBound+upperBound)/2;
+        if ( validateSolution(K, B, candidate) ) {
+            upperBound = candidate - 1;
+        } else {
+            lowerBound = candidate + 1;
+        }
     }
-	PRINT_VECTOR(P);
-	PRINT_VECTOR(blocks);
 
-    vector<int> sums(K, 0);
-
-    // calculate sum for each block
-	for (int k=0; k<K; k++) {
-		sums[k] = P[blocks[k+1]] - P[blocks[k]];
-	}
-    PRINT_VECTOR(sums);
-    int minimalLargeSum = *max_element(std::begin(sums), std::end(sums));
-    PRINT_VAR(minimalLargeSum);
-
-    cout << "optimizing ..." << endl;
-
-    // Now go through and see if we can reduce the maximal further
-    // Mainly go through and see if we can reduce any of the maxes, at least
-    // until both are not smaller than they were.  Basically, if we made an
-    // adjustment last time, assume we can make an adjustment this time
-    // Do at each block until it can be done no further, then repeat loop
-    // until no adjustments made
-    bool furtherReductionPossible = false;
-    do {
-        cout << "--" << endl;
-        furtherReductionPossible = false;
-
-        // If we make an adjustment, then further reduction is possible
-        for (int k=1; k<(K-1); k++) {
-            // If blocks equal continue
-            if (sums[k] == sums[k-1]) {
-                continue;
-            }
-
-            // If negative, take number from block [k-1] to block [k].
-            // If positive, take number from block [k] to block [k-1].
-            int direction = sums[k]-sums[k-1];
-
-            int b_plus_1 = blocks[k+1];
-            int b = blocks[k];
-            int b_minus_1 = blocks[k-1];
-
-            // only move index down if there is room
-            if ( (direction < 0) && ((blocks[k-1]) < (blocks[k]-1)) ) {
-                b--;
-            } else if ( ((blocks[k+1]) > (blocks[k]+1)) ) {
-                // only move index up if there is room
-                b++;
-            }
-
-            // Now check both sums are smaller than the previous max
-            // Has to be smaller, cannot be the same
-            int s = P[b_plus_1]-P[b];
-            int s_1 = P[b]-P[b_minus_1];
-            if ( (s<minimalLargeSum) && (s_1<minimalLargeSum) && s && s_1) {
-                blocks[k] = b;
-            }
-        }
-        // calculate sum for each block
-        for (int k=0; k<K; k++) {
-            sums[k] = P[blocks[k+1]] - P[blocks[k]];
-        }
-	    PRINT_VECTOR(blocks);
-	    PRINT_VECTOR(sums);
-    
-	    int innerMinimalLargeSum = *max_element(std::begin(sums), std::end(sums));
-        PRINT_VAR(innerMinimalLargeSum);
-    
-        if ( innerMinimalLargeSum < minimalLargeSum ) {
-            minimalLargeSum = innerMinimalLargeSum;
-            furtherReductionPossible = true;
-        }
-    } while (furtherReductionPossible);
-
-    cout << " ... optimized" << endl;
-    
-	PRINT_VAR(minimalLargeSum);
-
-	return minimalLargeSum;
+    return lowerBound;
 }

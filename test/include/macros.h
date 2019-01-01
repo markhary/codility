@@ -4,12 +4,14 @@
 #include <iostream>
 
 #define PRINT_VECTOR(X) { \
-    std::cout << #X << ": ["; \
-    for (const auto &x: X) { std::cout << x << ", "; } \
-    std::cout << "]" << std::endl; \
+    std::cout << #X << " = ["; \
+    for (int i=0; i<(int)X.size(); i++ ) { \
+        std::cout << X[i] << ( (i != ((int)X.size()-1)) ? ", " : ""); \
+    } \
+    std::cout << "];" << std::endl; \
 }
 
-#define PRINT_VAR(X) { std::cout << #X << ": " << X << std::endl; }
+#define PRINT_VAR(X) { std::cout << #X << " = " << X << ";" << std::endl; }
 
 #define SIZEOF(X) { std::cout << "sizeof(" << #X << "): " << sizeof(X) << " bytes" << std::endl; }
 
