@@ -59,7 +59,7 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 | [FibFrog](https://app.codility.com/programmers/lessons/13-fibonacci_numbers/fib_frog/).[cpp](Lesson%2013%20-%20Fibonacci%20Numbers/FibFrog.cpp) | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%2Alog%28N%29%29-lightgrey.svg) |
 | [Ladder]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
 | **Lesson 14 - Binary Search Algorithm** | |
-| [MinMaxDivision](https://app.codility.com/programmers/lessons/14-binary_search_algorithm/min_max_division/).[cpp](Lesson%2014%20-%20Binary%20Search%20Algorithm/MinMaxDivision.cpp) |  ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) ![](https://img.shields.io/badge/TS-83%25-yellow.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-66%25-orange.svg) ![](https://img.shields.io/badge/TC-O%28N%2Alog%28N%2BM%29%29-lightgrey.svg)  |
+| [MinMaxDivision](https://app.codility.com/programmers/lessons/14-binary_search_algorithm/min_max_division/).[cpp](Lesson%2014%20-%20Binary%20Search%20Algorithm/MinMaxDivision.cpp) | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%2Alog%28N%2BM%29%29-lightgrey.svg) |
 | [NailingPlanks]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
 | **Lesson 15 - Caterpillar Method** | |
 | [AbsDistinct](https://app.codility.com/programmers/lessons/15-caterpillar_method/abs_distinct/).[cpp](Lesson%2012%20-%20Caterpillar%20Method/AbsDistinct.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%29%20or%20O%28N%2Alog%28N%29%29-lightgrey.svg) |
@@ -85,14 +85,11 @@ Tests are located in the `test` directory.  Tests have the same name as the *Les
 
 ### Dependencies
 
-Download [gflags](https://gflags.github.io/gflags/) to the packages directory, or update *CMakeLists.txt* accordingly.
+Test are built using the following packages.  Use CMake and the dependencies will be downloaded and built for you.
 
-```
-mkdir test/packages
-cd test/packages
-git clone https://github.com/gflags/gflags.git
-cd ../..
-```
+* [gflags](https://gflags.github.io/gflags/) 
+* [googletest](https://github.com/google/googletest) 
+
 
 ### Building
 You can build the tests for your favorite development environment using `cmake`.  I build them as follows:
@@ -113,4 +110,5 @@ You are welcome to contribute provided you accept the [Contributor Covenant Code
 This repository is licensed under [The Unlicense](LICENSE.md):
 
 ## Acknowledgements
-* Thank you to the [gflags](https://gflags.github.io/gflags/) command line parsing library
+* Thank you to the [gflags](https://gflags.github.io/gflags/) command line parsing library.
+* Thank you to the [googletest](https://github.com/google/googletest) C++ test framework.

@@ -3,10 +3,9 @@
 //
 #include <iostream>
 #include <vector>
-#include <chrono>
-#include <cstdlib>
 
 #include "macros.h"
+#include "gtest/gtest.h"
 
 //
 // Configure command line arguments
@@ -24,65 +23,8 @@ using namespace std;
 int solution(int, int, vector<int> &);
 int bruteForce(int, int, vector<int> &);
 
-//
-// Run the actual test
-//
-void test(int testNum, int K, int M, vector<int> A, bool assert, bool printA, bool runBruteForce)
+vector<int> generateRandomSequence(const int &N, const int &M, int seed)
 {
-    if ( FLAGS_test && testNum != FLAGS_test ) {
-        return;
-    }
-    cout << "---- Test " << testNum << " ----" << endl;
-    if (printA) {
-        PRINT_VECTOR(A);
-    }
-
-    auto start = chrono::high_resolution_clock::now();
-
-	cout << "calculating solution..." << endl;
-    auto answer = solution(K, M, A);
-
-    auto stop = chrono::high_resolution_clock::now();
-
-	PRINT_VAR(answer);
-
-    auto duration = chrono::duration_cast<chrono::microseconds>(stop - start); 
-    cout << duration.count() << " us" << endl; 
-
-	if ( !runBruteForce ) {
-		cout << "skipping brute force answer..." << endl;
-		return;
-	}
-
-    cout << " . . . . . . . . . . . . . . . . " << endl;
-
-	cout << "calculating brute force answer..." << endl;
-   	auto correct = bruteForce(K, M, A);
-
-    cout << endl;
-    cout << "- - - - - - - - - - - - - - - - -" << endl;
-    cout << "Test " << testNum << " Results" << endl;
-    cout << endl;
-
-	PRINT_VAR(correct);
-
-    cout << answer << " =? " << correct << endl;
-
-	if (assert) {
-		assert( answer == correct );
-	}
-
-    // Nice debug statement if we are not asserting
-    cout << ((answer == correct) ? " pass " : " *** FAIL *** ") << endl;
-}
-
-vector<int> generateRandomSequence(const int &testNum, const int &N, const int &M, int seed)
-{
-    if ( FLAGS_test && (testNum != FLAGS_test) ) {
-        vector<int> A;
-        return A;
-    }
-
     vector<int> A(N);
     if ( !seed ) {
         seed = time(0);
@@ -96,13 +38,8 @@ vector<int> generateRandomSequence(const int &testNum, const int &N, const int &
     return A;
 }
 
-vector<int> generateOneOrMSequence(const int &testNum, const int &N, const int & M, const double &prob, int seed)
+vector<int> generateOneOrMSequence(const int &N, const int & M, const double &prob, int seed)
 {
-    if ( FLAGS_test && (testNum != FLAGS_test) ) {
-        vector<int> A;
-        return A;
-    }
-
     vector<int> A(N);
     if ( !seed ) {
         seed = time(0);
@@ -117,112 +54,118 @@ vector<int> generateOneOrMSequence(const int &testNum, const int &N, const int &
     return A;
 }
 
-//
-// Configure tests to run
-//
+TEST(MinMaxDivisionTest, EdgeShortZeroes) 
+{
+    int K = 1;
+    int M = 5;
+    vector<int> A = {0, 0};
+    ASSERT_EQ(bruteForce(K, M, A), solution(K, M, A));
+}
+
+TEST(MinMaxDivisionTest, Decrementing)
+{
+    int K = 4;
+    int M = 10;
+    vector<int>A = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+    ASSERT_EQ(bruteForce(K, M, A), solution(K, M, A));
+}
+
+TEST(MinMaxDivisionTest, LessonSample)
+{
+    int M = 5;
+    vector<int>A = {2, 1, 5, 1, 2, 2, 2};
+
+    for (int K=1; K<=5; K++) {
+        ASSERT_EQ(bruteForce(K, M, A), solution(K, M, A));
+    }
+
+    int K = 10000;
+    ASSERT_EQ(bruteForce(K, M, A), solution(K, M, A));
+}
+
+TEST(MinMaxDivisionTest, EdgeOhFiveOh)
+{
+    int K = 20;
+    int M = 5;
+    vector<int> A = {0, 5, 0};
+    ASSERT_EQ(bruteForce(K, M, A), solution(K, M, A));
+
+    K = 4000;
+    ASSERT_EQ(bruteForce(K, M, A), solution(K, M, A));
+}
+
+TEST(MinMaxDivisionTest, RandomSequenceOne)
+{
+	int N = 20;
+	int M = 5;
+	int K = 5;
+	vector<int> A = generateRandomSequence(N, M, FLAGS_seed);
+    ASSERT_EQ(bruteForce(K, M, A), solution(K, M, A));
+}
+
+TEST(MinMaxDivisionTest, RandomSequenceTwo)
+{
+	int N = 10;
+	int M = 10000;
+	int K = 5;
+	vector<int> A = generateRandomSequence(N, M, FLAGS_seed);
+    ASSERT_EQ(bruteForce(K, M, A), solution(K, M, A));
+}
+
+TEST(MinMaxDivisionTest, OneOrMSequence)
+{
+	int N = 40;
+	int M = 100000;
+	int K = 5;
+	vector<int> A = generateOneOrMSequence(N, M, 0.90, FLAGS_seed);
+    ASSERT_EQ(bruteForce(K, M, A), solution(K, M, A));
+}
+
+TEST(MinMaxDivisionTest, PerformanceMaxK)
+{
+    int N = 100000;
+    int M = 10000;
+    int K = 100000;
+	vector<int> A(N);
+    // Test max values with max K
+    {
+        for (int i=0; i<N; i++) {
+            A[i] = M;
+        }
+        cout << "solution: " << solution(K, M, A) << endl;
+    }
+}
+
+TEST(MinMaxDivisionTest, PerformanceBinary)
+{
+    int N = 100000;
+    int M = 10000;
+    int K = 100000;
+	vector<int> A = generateRandomSequence(N, 1, FLAGS_seed);
+    cout << "solution: " << solution(K, M, A) << endl;
+}
+
+TEST(MinMaxDivisionTest, PerformanceRandom)
+{
+    int N = 100000;
+    int M = 10000;
+    int K = 100000;
+	vector<int> A = generateRandomSequence(N, M, FLAGS_seed);
+    cout << "solution: " << solution(K, M, A) << endl;
+}
+
 int main(int argc, char **argv) 
 {
-
+    ::testing::InitGoogleTest(&argc, argv);
     gflags::SetUsageMessage("Runs the tests for MinMaxDivision");
     gflags::ParseCommandLineFlags(&argc, &argv, true);
 
     if ( argc > 1 ) {
         cerr << "Command line arguments not recognized, please execute:" << endl;
-        cerr << "  " << argv[0] << " --help" << endl;
+        cerr << "  " << argv[0] << " --help or" << endl;
+        cerr << "  " << argv[0] << " --gtest_help" << endl;
         exit(1);
     }
 
-    cout << "========================================" << endl;
-    cout << "==              START TEST            ==" << endl;
-    cout << "========================================" << endl;
-
-    // We don't want to print the A vector for all tests (can be quite large)
-    // Also, we do want to skip brute force for some tests too (where it is slow)
-    bool printA = true;
-	int testNum = 1;
-    bool runBruteForce = true;
-
-   	test(testNum++, 1, 5, {0, 0}, FLAGS_assert, printA, runBruteForce); 
-   	test(testNum++, 4, 10, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, FLAGS_assert, printA, runBruteForce); 
-   	test(testNum++, 4, 10, {10, 9, 8, 7, 6, 5, 4, 3, 2, 1}, FLAGS_assert, printA, runBruteForce); 
-   	test(testNum++, 1, 5, {2, 1, 5, 1, 2, 2, 2}, FLAGS_assert, printA, runBruteForce); 
-   	test(testNum++, 2, 5, {2, 1, 5, 1, 2, 2, 2}, FLAGS_assert, printA, runBruteForce); 
-   	test(testNum++, 3, 5, {2, 1, 5, 1, 2, 2, 2}, FLAGS_assert, printA, runBruteForce); 
-   	test(testNum++, 4, 5, {2, 1, 5, 1, 2, 2, 2}, FLAGS_assert, printA, runBruteForce); 
-   	test(testNum++, 5, 5, {2, 1, 5, 1, 2, 2, 2}, FLAGS_assert, printA, runBruteForce); 
-   	test(testNum++, 20, 5, {0, 5, 0}, FLAGS_assert, printA, runBruteForce); 
-   	test(testNum++, 4000, 5, {0, 5, 0}, FLAGS_assert, printA, runBruteForce); 
-   	test(testNum++, 10000, 5, {2, 1, 5, 1, 2, 2, 2}, FLAGS_assert, printA, runBruteForce); 
-   	test(testNum++, 10000, 10000, {0, 10000, 0}, FLAGS_assert, printA, runBruteForce); 
-
-    // Calculated array tests
-    //
-    // Do some mini random sequence tests
-	int N = 20;
-	int M = 5;
-	int K = 5;
-    {
-		vector<int> A = generateRandomSequence(testNum, N, M, FLAGS_seed);
-	    test(testNum++, K, M, A, FLAGS_assert, printA, runBruteForce);
-    }
-
-    {
-        N = 10;
-        M = 10000;
-		vector<int> A = generateRandomSequence(testNum, N, M, FLAGS_seed);
-        test(testNum++, K, M, A, FLAGS_assert, printA, runBruteForce);
-    }
-
-    {
-        N = 40;
-        M = 100000;
-		vector<int> A = generateOneOrMSequence(testNum, N, M, 0.90, FLAGS_seed);
-        test(testNum++, K, M, A, FLAGS_assert, printA, runBruteForce);
-    }
-
-	// Don't run brute force test below here because brute force
-    // is O(N^K)
-    FLAGS_assert = false;
-    printA = false;
-    runBruteForce = false;
-
-	N = 100000;
-	M = 10000;
-	K = 100000;
-	vector<int> T(N);
-
-    // Test max values with max K
-    {
-        for (int i=0; i<N; i++) {
-            T[i] = M;
-        }
-        test(testNum++, K, M, T, FLAGS_assert, printA, runBruteForce);
-    }
-
-    // Make it so that K blocks need to be calculated
-	M = 10000;
-	K = 10000;
-
-    // Test max values
-    {
-        for (int i=0; i<N; i++) {
-            T[i] = M;
-        }
-        test(testNum++, K, M, T, FLAGS_assert, printA, runBruteForce);
-    }
-
-    // Test binary values
-    {
-		vector<int> A = generateRandomSequence(testNum, N, 1, FLAGS_seed);
-        test(testNum++, K, M, A, FLAGS_assert, printA, runBruteForce);
-    }
-    
-    // Test random values from [0 .. M] but with K=10000
-    {
-        vector<int> A = generateRandomSequence(testNum, N, M, FLAGS_seed);
-        test(testNum++, K, M, A, FLAGS_assert, printA, runBruteForce);
-    }
-
-    exit(0);
+    return RUN_ALL_TESTS();
 }
-
