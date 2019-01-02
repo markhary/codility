@@ -6,3 +6,13 @@
 // Detected time complexity: Complexity
 //
 
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+namespace name
+{
+    void bruteForce(vector<int> &a);
+    void solution(vector<int> &a);
+}

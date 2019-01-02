@@ -81,11 +81,10 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 -->
 
 ## Tests
-Tests are located in the `$BUILD_DIR}\bin` directory.  All tests are run using `codility`.  Individual tests can be run using the googletest framework documentation, e.g.:
+Tests are located in the `$BUILD_DIR}\bin` directory.  All tests are run using `codility`.  Individual tests can be run using the googletest framework documentation.  For more information:
 
 ```
 codility --help
-codility --gtest_help
 ```
 
 ### Dependencies

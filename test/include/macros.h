@@ -1,5 +1,5 @@
-#ifndef MACROS_H
-#define MACROS_H
+#ifndef CODILITY_MACROS_H
+#define CODILITY_MACROS_H
 
 #include <iostream>
 

@@ -4,16 +4,13 @@
 #include <iostream>
 #include <vector>
 
+#include <gtest/gtest.h>
+#include <gflags/gflags.h>
+
 #include "macros.h"
-#include "gtest/gtest.h"
+#include "args.h"
 
 #include "MinMaxDivision.h"
-
-//
-// Configure command line arguments
-//
-#include "gflags/gflags.h"
-DEFINE_int32(seed, 0, "Use given seed to repeat previous result, 0 means use current time as seed");
 
 using namespace std;
 
@@ -153,20 +150,4 @@ TEST(MinMaxDivisionTest, PerformanceRandom)
     int K = 100000;
     vector<int> A = minmaxdivision::test::generateRandomSequence(N, M, FLAGS_seed);
     cout << "solution: " << minmaxdivision::solution(K, M, A) << endl;
-}
-
-int main(int argc, char **argv) 
-{
-    ::testing::InitGoogleTest(&argc, argv);
-    gflags::SetUsageMessage("Runs the tests for MinMaxDivision");
-    gflags::ParseCommandLineFlags(&argc, &argv, true);
-
-    if ( argc > 1 ) {
-        cerr << "Command line arguments not recognized, please execute:" << endl;
-        cerr << "  " << argv[0] << " --help or" << endl;
-        cerr << "  " << argv[0] << " --gtest_help" << endl;
-        exit(1);
-    }
-
-    return RUN_ALL_TESTS();
 }
