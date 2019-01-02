@@ -81,7 +81,12 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 -->
 
 ## Tests
-Tests are located in the `test` directory.  Tests have the same name as the *Lesson* with the word *Test* concatenated, e.g. `LessonTest`.  
+Tests are located in the `$BUILD_DIR}\bin` directory.  All tests are run using `codility`.  Individual tests can be run using the googletest framework documentation, e.g.:
+
+```
+codility --help
+codility --gtest_help
+```
 
 ### Dependencies
 
@@ -92,7 +97,9 @@ Test are built using the following packages.  Use CMake and the dependencies wil
 
 
 ### Building
-You can build the tests for your favorite development environment using `cmake`.  I build them as follows:
+You can build the tests for your favorite development environment using `cmake`.  e.g.:
+
+* For the command line:
 
 ```shell
 mkdir test/build
@@ -100,6 +107,16 @@ cd test/build
 cmake ..
 make
 ```
+
+* For XCode:
+
+```shell
+mkdir test/xcode
+cd test/xcode
+cmake -G Xcode ..
+make
+```
+
 
 Tests will be created in the `bin` directory located wherever you ran cmake from (`test\build\bin` in the example above).
 

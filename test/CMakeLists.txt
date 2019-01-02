@@ -72,10 +72,9 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE "Debug" CACHE STRING "Choose the type of build" FORCE)
 endif(NOT CMAKE_BUILD_TYPE)
 
-include_directories(include)
+include_directories(include ../include)
 
-#
-# Lesson 14 - Binary Search Algorithm - MinMaxDivision
-#
-add_executable (MinMaxDivisionTest src/MinMaxDivisionTest.cpp ../Lesson\ 14\ -\ Binary\ Search\ Algorithm/MinMaxDivision.cpp)
-target_link_libraries(MinMaxDivisionTest gflags::gflags gtest_main)
+add_executable (codility 
+                src/MinMaxDivisionTest.cpp ../Lesson\ 14\ -\ Binary\ Search\ Algorithm/MinMaxDivision.cpp
+                src/main.cpp)
+target_link_libraries(codility gflags::gflags gtest_main)
