@@ -130,7 +130,7 @@ TEST(MinMaxDivisionTest, PerformanceMaxK)
         for (int i=0; i<N; i++) {
             A[i] = M;
         }
-        cout << "solution: " << minmaxdivision::solution(K, M, A) << endl;
+        EXPECT_GE(minmaxdivision::solution(K, M, A), 0);
     }
 }
 
@@ -140,7 +140,7 @@ TEST(MinMaxDivisionTest, PerformanceBinary)
     int M = 10000;
     int K = 100000;
     vector<int> A = minmaxdivision::test::generateRandomSequence(N, 1, FLAGS_seed);
-    cout << "solution: " << minmaxdivision::solution(K, M, A) << endl;
+    EXPECT_GE(minmaxdivision::solution(K, M, A), 0);
 }
 
 TEST(MinMaxDivisionTest, PerformanceRandom)
@@ -149,5 +149,5 @@ TEST(MinMaxDivisionTest, PerformanceRandom)
     int M = 10000;
     int K = 100000;
     vector<int> A = minmaxdivision::test::generateRandomSequence(N, M, FLAGS_seed);
-    cout << "solution: " << minmaxdivision::solution(K, M, A) << endl;
+    EXPECT_GE(minmaxdivision::solution(K, M, A), 0);
 }
