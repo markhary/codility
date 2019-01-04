@@ -6,7 +6,6 @@
 //
 // Configure command line arguments
 //
-DEFINE_int32(seed, 0, "Use given seed to repeat previous result, 0 means use current time as seed");
-
+DECLARE_int32(seed);
 
 #endif

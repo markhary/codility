@@ -60,7 +60,7 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 | [Ladder]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
 | **Lesson 14 - Binary Search Algorithm** | |
 | [MinMaxDivision](https://app.codility.com/programmers/lessons/14-binary_search_algorithm/min_max_division/).[cpp](Lesson%2014%20-%20Binary%20Search%20Algorithm/MinMaxDivision.cpp) | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%2Alog%28N%2BM%29%29-lightgrey.svg) |
-| [NailingPlanks]() []() | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
+| [NailingPlanks](https://app.codility.com/programmers/lessons/14-binary_search_algorithm/nailing_planks/).[cpp](Lesson%2014%20-%20Binary%20Search%20Algorithm/NailingPlanks.cpp) | ![](https://img.shields.io/badge/D-respectable-61c0c5.svg) |
 | **Lesson 15 - Caterpillar Method** | |
 | [AbsDistinct](https://app.codility.com/programmers/lessons/15-caterpillar_method/abs_distinct/).[cpp](Lesson%2012%20-%20Caterpillar%20Method/AbsDistinct.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%29%20or%20O%28N%2Alog%28N%29%29-lightgrey.svg) |
 | [CountDistinctSlices](https://app.codility.com/programmers/lessons/15-caterpillar_method/count_distinct_slices/).[cpp](Lesson%2012%20-%20Caterpillar%20Method/CountDistinctSlices.cpp) | ![](https://img.shields.io/badge/D-painless-81c1e1.svg) ![](https://img.shields.io/badge/TS-100%25-green.svg) ![](https://img.shields.io/badge/C-100%25-green.svg) ![](https://img.shields.io/badge/P-100%25-green.svg) ![](https://img.shields.io/badge/TC-O%28N%29-lightgrey.svg) |
@@ -81,10 +81,13 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 -->
 
 ## Tests
-Tests are located in the `$BUILD_DIR}\bin` directory.  All tests are run using `codility`.  Individual tests can be run using the googletest framework documentation.  For more information:
+Assuming you are using cmake, tests will be located in your `$BUILD_DIR}/bin` directory.  All tests are in the same `codility` binary.  Individual tests can be run per the [googletest framework documentation](https://github.com/google/googletest/blob/master/googletest/docs/advanced.md#running-test-programs-advanced-options).  Here is a quick reference:
 
 ```
-codility --help
+/path/to/build/bin> codility --help
+/path/to/build/bin> codility --gtest_list_tests
+/path/to/build/bin> codility --gtest_filter=TestName.Test
+/path/to/build/bin> codility --seed 12345
 ```
 
 ### Dependencies
@@ -123,7 +126,7 @@ Tests will be created in the `bin` directory located wherever you ran cmake from
 You are welcome to contribute provided you accept the [Contributor Covenant Code of Conduct](CONTRIBUTING.md).
 
 ## License
-This repository is licensed under [The Unlicense](LICENSE.md):
+This repository is licensed under [The Unlicense](LICENSE.md).
 
 ## Acknowledgements
 * Thank you to the [gflags](https://gflags.github.io/gflags/) command line parsing library.

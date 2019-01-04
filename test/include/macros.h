@@ -2,6 +2,7 @@
 #define CODILITY_MACROS_H
 
 #include <iostream>
+#include <chrono>
 
 #define PRINT_VECTOR(X) { \
     std::cout << #X << " = ["; \

@@ -11,8 +11,8 @@
 
 using namespace std;
 
-namespace name
+namespace lesson
 {
-    void bruteForce(vector<int> &a);
-    void solution(vector<int> &a);
+    void bruteForce(vector<int> &A);
+    void solution(vector<int> &A);
 }

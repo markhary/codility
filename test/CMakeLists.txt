@@ -76,5 +76,6 @@ include_directories(include ../include)
 
 add_executable (codility 
                 src/MinMaxDivisionTest.cpp ../Lesson\ 14\ -\ Binary\ Search\ Algorithm/MinMaxDivision.cpp
+                src/NailingPlanksTest.cpp ../Lesson\ 14\ -\ Binary\ Search\ Algorithm/NailingPlanks.cpp
                 src/main.cpp)
 target_link_libraries(codility gflags::gflags gtest_main)
