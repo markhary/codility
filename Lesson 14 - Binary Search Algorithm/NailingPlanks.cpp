@@ -3,7 +3,7 @@
 // Task Score: 100%
 // Correctness: 100%
 // Performance: 100%
-// Detected time complexity: O((N + M) * log(M))
+// Detected time complexity: O((N+M)*log(M))
 //
 
 #include <iostream>
