@@ -11,6 +11,13 @@ set(CMAKE_CXX_EXTENSIONS OFF) #...without compiler extensions like gnu++11
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic -Wextra -Werror")
 
 #
+# set default build to debug
+#
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE "Debug" CACHE STRING "Choose the type of build" FORCE)
+endif(NOT CMAKE_BUILD_TYPE)
+
+#
 # Download and unpack googletest at configure time
 #
 configure_file(CMakeLists.googletest.in googletest-download/CMakeLists.txt)
@@ -64,13 +71,6 @@ add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/gflags-src
 # Put the binaries into "bin/"
 #
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "bin/")
-
-#
-# set default build to debug
-#
-if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE "Debug" CACHE STRING "Choose the type of build" FORCE)
-endif(NOT CMAKE_BUILD_TYPE)
 
 include_directories(include ../include)
 

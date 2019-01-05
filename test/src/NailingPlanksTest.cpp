@@ -18,8 +18,9 @@ namespace nailingplanks
 { 
     namespace test 
     {
-        // Add some time to brute force method duration tests
-        const int gBruteForcePadding = 10;
+
+        // Amount of time to allow execution to vary just because
+        int gDurationPadding = 10;
 
         // Add utility functions here
         void generateRandom(vector<int> &A, vector<int> &B, vector<int> &C,
@@ -27,6 +28,7 @@ namespace nailingplanks
         {
             if ( !seed ) {
                 seed = time(0);
+                cout << "Seeding... ";
             }
             cout << "Generating random sequence using " << seed << endl;
             srand(seed);
@@ -50,6 +52,7 @@ namespace nailingplanks
         {
             if ( !seed ) {
                 seed = time(0);
+                cout << "Seeding... ";
             }
             cout << "Generating random planks using " << seed << endl;
             srand(seed);
@@ -66,6 +69,7 @@ namespace nailingplanks
         {
             if ( !seed ) {
                 seed = time(0);
+                cout << "Seeding... ";
             }
             cout << "Generating random nails using " << seed << endl;
             srand(seed);
@@ -77,6 +81,7 @@ namespace nailingplanks
             }
         }
 
+        // Measures execution times, returns value in milliseconds
         double profile (const std::function <int (vector<int> &A, vector<int> &B, vector<int> &C)> &func,
                 vector<int> &A, vector<int> &B, vector<int> &C, int &answer)
         {
@@ -161,7 +166,7 @@ TEST(NailingPlanksTest, PerformanceMaxRandom)
     double solutionDuration = profile(solution, A, B, C, solutionAnswer);
 
     ASSERT_EQ(bruteForceAnswer, solutionAnswer);
-    EXPECT_GE(bruteForceDuration+gBruteForcePadding, solutionDuration);
+    EXPECT_GE(bruteForceDuration+gDurationPadding, solutionDuration);
 }
 
 TEST(NailingPlanksTest, PerformanceRandomMaxNEqualM) 
@@ -188,7 +193,7 @@ TEST(NailingPlanksTest, PerformanceRandomMaxNEqualM)
     double solutionDuration = profile(solution, A, B, C, solutionAnswer);
 
     ASSERT_EQ(bruteForceAnswer, solutionAnswer);
-    EXPECT_GE(bruteForceDuration+gBruteForcePadding, solutionDuration);
+    EXPECT_GE(bruteForceDuration+gDurationPadding, solutionDuration);
 }
 
 TEST(NailingPlanksTest, PerformanceRandomNSmallerM) 
@@ -215,7 +220,7 @@ TEST(NailingPlanksTest, PerformanceRandomNSmallerM)
     double solutionDuration = profile(solution, A, B, C, solutionAnswer);
 
     ASSERT_EQ(bruteForceAnswer, solutionAnswer);
-    EXPECT_GE(bruteForceDuration+gBruteForcePadding, solutionDuration);
+    EXPECT_GE(bruteForceDuration+gDurationPadding, solutionDuration);
 }
 
 TEST(NailingPlanksTest, PerformanceMinMaxOne) 
@@ -232,7 +237,7 @@ TEST(NailingPlanksTest, PerformanceMinMaxOne)
     vector<int> A(N, min);
     vector<int> B(N, max);
     vector<int> C(M, 30000);
-    
+
     int bruteForceAnswer;
     double bruteForceDuration = profile(bruteForce, A, B, C, bruteForceAnswer);
 
@@ -240,7 +245,7 @@ TEST(NailingPlanksTest, PerformanceMinMaxOne)
     double solutionDuration = profile(solution, A, B, C, solutionAnswer);
 
     ASSERT_EQ(bruteForceAnswer, solutionAnswer);
-    EXPECT_GE(bruteForceDuration+gBruteForcePadding, solutionDuration);
+    EXPECT_GE(bruteForceDuration+gDurationPadding, solutionDuration);
 }
 
 TEST(NailingPlanksTest, PerformanceRandomNLargerM) 
@@ -267,5 +272,5 @@ TEST(NailingPlanksTest, PerformanceRandomNLargerM)
     double solutionDuration = profile(solution, A, B, C, solutionAnswer);
 
     ASSERT_EQ(bruteForceAnswer, solutionAnswer);
-    EXPECT_GE(bruteForceDuration+gBruteForcePadding, solutionDuration);
+    EXPECT_GE(bruteForceDuration+gDurationPadding, solutionDuration);
 }
