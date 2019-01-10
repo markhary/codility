@@ -28,7 +28,7 @@ namespace countdiv
     int solution(int A, int B, int K) 
     {
         // Have to separate these because of integer rounding
-        // in this case int(B/K) - int (A/K) != int (B-A/K)
+        // in this case int(B/K) - int (A/K) != int (B-A)/K
         // The rest is just simple math and % cleverness
         // Not sure why this is a prefix sum solution
         return ( B/K - A/K + !(A%K) );
