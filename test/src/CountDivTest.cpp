@@ -52,7 +52,7 @@ TEST(CountDivTest, Edge)
     ASSERT_EQ(countdiv::bruteForce(A, B, K), countdiv::solution(A, B, K));
 }
 
-TEST(CountDivTest, Sample) 
+TEST(CountDivTest, CorrectSample) 
 {
     int A = 6;
     int B = 11;
@@ -60,7 +60,7 @@ TEST(CountDivTest, Sample)
     ASSERT_EQ(countdiv::bruteForce(A, B, K), countdiv::solution(A, B, K));
 }
 
-TEST(CountDivTest, Zeroes) 
+TEST(CountDivTest, CorrectZeroes) 
 {
     int A = 0;
     int B = 0;
@@ -68,7 +68,7 @@ TEST(CountDivTest, Zeroes)
     ASSERT_EQ(countdiv::bruteForce(A, B, K), countdiv::solution(A, B, K));
 }
 
-TEST(CountDivTest, Maximum) 
+TEST(CountDivTest, CorrectMaximum) 
 {
     int A = 2000000000;
     int B = 2000000000;
@@ -76,7 +76,7 @@ TEST(CountDivTest, Maximum)
     ASSERT_EQ(countdiv::bruteForce(A, B, K), countdiv::solution(A, B, K));
 }
 
-TEST(CountDivTest, MinMaxOne) 
+TEST(CountDivTest, PerformanceMinMaxOne) 
 {
     int A = 0;
     int B = 2000000000;
@@ -85,7 +85,7 @@ TEST(CountDivTest, MinMaxOne)
     ASSERT_EQ(countdiv::solution(A, B, K), countdiv::solution(A, B, K));
 }
 
-TEST(CountDivTest, MinMaxBig) 
+TEST(CountDivTest, PerformanceMinMaxBig) 
 {
     int A = 0;
     int B = 1234567890;
@@ -95,7 +95,7 @@ TEST(CountDivTest, MinMaxBig)
     ASSERT_EQ(countdiv::solution(A, B, K), countdiv::solution(A, B, K));
 }
 
-TEST(CountDivTest, MaxRandom) 
+TEST(CountDivTest, PerformanceMaxRandom) 
 {
     int A = 0;
     int B = 0;
