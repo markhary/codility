@@ -78,5 +78,6 @@ add_executable (codility
                 src/CountDivTest.cpp ../src/CountDiv.cpp
                 src/MinMaxDivisionTest.cpp ../src/MinMaxDivision.cpp
                 src/NailingPlanksTest.cpp ../src/NailingPlanks.cpp
+                src/MinAvgTwoSliceTest.cpp ../src/MinAvgTwoSlice.cpp
                 src/main.cpp)
 target_link_libraries(codility gflags::gflags gtest_main)
