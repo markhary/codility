@@ -8,7 +8,7 @@ project (test)
 set(CMAKE_CXX_STANDARD 11) # C++11...
 set(CMAKE_CXX_STANDARD_REQUIRED ON) #...is required...
 set(CMAKE_CXX_EXTENSIONS OFF) #...without compiler extensions like gnu++11
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic -Wextra -Werror")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic -Wall -Wextra")
 
 #
 # set default build to debug
@@ -79,5 +79,6 @@ add_executable (codility
                 src/MinMaxDivisionTest.cpp ../src/MinMaxDivision.cpp
                 src/NailingPlanksTest.cpp ../src/NailingPlanks.cpp
                 src/MinAvgTwoSliceTest.cpp ../src/MinAvgTwoSlice.cpp
+                src/NumberOfDiscIntersectionsTest.cpp ../src/NumberOfDiscIntersections.cpp
                 src/main.cpp)
 target_link_libraries(codility gflags::gflags gtest_main)

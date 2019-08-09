@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include <vector>
+#include <functional>
 
 #include <gtest/gtest.h>
 #include <gflags/gflags.h>
@@ -16,7 +17,7 @@ using namespace std;
 
 namespace nailingplanks
 { 
-    namespace test 
+    namespace test
     {
 
         // Amount of time to allow execution to vary just because
