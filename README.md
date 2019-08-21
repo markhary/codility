@@ -126,7 +126,7 @@ Tests will be created in the `bin` directory located wherever you ran cmake from
 You are welcome to contribute provided you accept the [Contributor Covenant Code of Conduct](CONTRIBUTING.md). Also, please do the following:
 
 * Submit a pull request. In the PR, Tell me how you figured out what you figured out. Links and background are very much appreciated (*e.g. I used the binomial distribution found [here](https://en.wikipedia.org/wiki/Binomial_distribution). This is commonly used to solve this class of problem because my professor told me...*). Remember, part of this code base is to educate.
-* Sign your commits.
+* [Sign](https://help.github.com/en/articles/signing-commits) your commits.
 * Comment your code!
 * Look at the other source files and follow the same general style and naming conventions. Most importantly, use meaningful variable names, e.g.
   * bad example: int a, aa, a1, a1a, aaaaa;
