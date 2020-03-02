@@ -1,7 +1,7 @@
 // https://app.codility.com/programmers/lessons/6-sorting/max_product_of_three/
 // 
 // Task Score: 100%
-// Correctness: 75%
+// Correctness: 100%
 // Performance: 100%
 // Detected time complexity: O(N*log(N))
 //
@@ -33,6 +33,7 @@ int solution(vector<int> &A) {
     }
 
     if ( N == 4 ) {
+        if ( A[2] == 0 ) return A[0] * A[1] * A[2];
         long long int abd = A[0] * A[1] * A[3];
         long long int bcd = A[1] * A[2] * A[3];
         return ( (abd>bcd) ? abd : bcd );
