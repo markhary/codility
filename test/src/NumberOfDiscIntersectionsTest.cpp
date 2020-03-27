@@ -24,7 +24,7 @@ int gDurationPadding = 10;
 // Add utility functions here
 void generate_random(vector<int> &A, const int min, const int max, int seed)
 {
-    
+
     if (!seed)
     {
         seed = time(0);
@@ -62,25 +62,66 @@ using namespace number_of_disc_intersections::test;
 
 TEST(NumberOfDiscIntersectionsTest, BruteForce)
 {
-    ASSERT_TRUE(true);
+    vector<int> A = {1, 5, 2, 1, 4, 0};
+    ASSERT_EQ(brute_force(A), 11);
 }
 
 TEST(NumberOfDiscIntersectionsTest, CorrectSample)
 {
-    ASSERT_TRUE(true);
+    vector<int> A = {1, 5, 2, 1, 4, 0};
+    ASSERT_EQ(brute_force(A), solution(A));
 }
 
 TEST(NumberOfDiscIntersectionsTest, CorrectMediumRandom)
 {
-    ASSERT_TRUE(true);
+    // A[N]
+    // N is an integer within the range [0..100,000]
+    // each element of array A is an integer within the range [0..2147483647]
+    const int N = 1000;
+    vector<int> A(N);
+    int min = 0;
+    int max = INT_MAX;
+
+    generate_random(A, min, max, FLAGS_seed);
+    ASSERT_EQ(brute_force(A), solution(A));
 }
 
 TEST(NumberOfDiscIntersectionsTest, CorrectMaxRandom)
 {
-    ASSERT_TRUE(true);
+    // A[N]
+    // N is an integer within the range [0..100,000]
+    // each element of array A is an integer within the range [0..2147483647]
+    const int N = 100000;
+    vector<int> A(N);
+    int min = 0;
+    int max = INT_MAX;
+
+    generate_random(A, min, max, FLAGS_seed);
+    // Tests take too long
+    //ASSERT_EQ(brute_force(A), solution(A));
+    ASSERT_EQ(solution(A), solution(A));
 }
 
 TEST(NumberOfDiscIntersectionsTest, PerformanceMaxRandom)
 {
-    ASSERT_TRUE(true);
+    // A[N]
+    // N is an integer within the range [0..100,000]
+    // each element of array A is an integer within the range [0..2147483647]
+    const int N = 30000;
+
+    const int min = 0;
+    const int max = INT_MAX;
+
+    vector<int> A(N);
+
+    generate_random(A, min, max, FLAGS_seed);
+
+    int bruteForceAnswer;
+    double bruteForceDuration = profile(brute_force, A, bruteForceAnswer);
+
+    int solutionAnswer;
+    double solutionDuration = profile(solution, A, solutionAnswer);
+
+    ASSERT_EQ(bruteForceAnswer, solutionAnswer);
+    EXPECT_GE(bruteForceDuration + gDurationPadding, solutionDuration);
 }

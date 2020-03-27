@@ -101,12 +101,12 @@ Test are built using the following packages.  Use CMake and the dependencies wil
 ### Building
 You can build the tests for your favorite development environment using `cmake`.  e.g.:
 
-* For the command line:
+* For the command line (I prefer to put all build artifacts in a separate directory):
 
 ```shell
 mkdir test/build
 cd test/build
-cmake ..
+cmake -S .. -B .
 make
 ```
 
@@ -139,4 +139,4 @@ This repository is licensed under [The Unlicense](LICENSE.md).
 ## Acknowledgements
 * Thank you to the [gflags](https://gflags.github.io/gflags/) command line parsing library.
 * Thank you to the [googletest](https://github.com/google/googletest) C++ test framework.
-* Thank you to @[arthurafarias](https://github.com/arthurafarias) for providing the optimized solution to MinAvgTwoSlice
+* Thank you to @[arthurafarias](https://github.com/arthurafarias) for providing the optimized solution to MinAvgTwoSlice and NumberOfDiscIntersections

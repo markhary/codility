@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.12.4)
-project (test)
+project(test)
 
 #
 # I use the C++ 11 extensions

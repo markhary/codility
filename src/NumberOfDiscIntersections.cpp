@@ -10,6 +10,7 @@
 #include <vector>
 #include <algorithm>
 #include <numeric>
+#include "macros.h"
 
 #include "NumberOfDiscIntersections.h"
 
@@ -23,14 +24,18 @@ int number_of_disc_intersections::brute_force(std::vector<int> &A)
     {
         for (int j = 0; j < length; j++)
         {
-            if (j - i <= A[i] + A[j])
+            if ((j - i) <= ((long)A[i] + (long)A[j]))
             {
                 n_intersections++;
             }
         }
     }
 
-    return n_intersections - (length * (length + 1) / 2);
+    n_intersections = n_intersections - (length * (length + 1) / 2);
+    if (n_intersections > 1e7)
+        return -1;
+
+    return n_intersections;
 }
 
 int number_of_disc_intersections::optimized(std::vector<int> &A)
@@ -70,8 +75,6 @@ int number_of_disc_intersections::optimized(std::vector<int> &A)
     std::for_each(A1.begin(), A1.end(), [&](long v) {
         auto it = std::upper_bound(A2.begin(), A2.end(), v);
         n_intersections += it - A2.begin();
-
-        std::cout << n_intersections << std::endl;
     });
 
     n_intersections = n_intersections - (l * (l + 1) / 2);
