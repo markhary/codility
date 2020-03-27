@@ -140,3 +140,4 @@ This repository is licensed under [The Unlicense](LICENSE.md).
 * Thank you to the [gflags](https://gflags.github.io/gflags/) command line parsing library.
 * Thank you to the [googletest](https://github.com/google/googletest) C++ test framework.
 * Thank you to @[arthurafarias](https://github.com/arthurafarias) for providing the optimized solution to MinAvgTwoSlice and NumberOfDiscIntersections
+* Thank you to @[farbod1277](https://github.com/farbod1277) for improving the solutions to MaxProductOfThree and MinAvgTwoSlice
