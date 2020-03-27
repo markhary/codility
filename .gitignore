@@ -1,2 +1,4 @@
 .syntastic_cpp_config
+.vscode
 TODO
+build
