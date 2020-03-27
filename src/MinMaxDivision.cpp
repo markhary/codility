@@ -7,6 +7,7 @@
 //
 #include <numeric>
 #include <vector>
+#include <algorithm>
 
 #include "MinMaxDivision.h"
 
