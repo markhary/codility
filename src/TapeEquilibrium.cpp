@@ -25,7 +25,7 @@ int solution(vector<int> &A) {
     // Can't do the entire array, have to stop at one less than the max
     for (unsigned int i=0; i<(N-1); i++) {
         // Simplifying this:
-        // sums[i] - (sums[i] - sum) = 2*sums[i]-sum;
+        // sums[i] - (sum - sums[i]) = 2*sums[i]-sum;
 
         long long diff = abs( 2*sums[i] - sum );
         if ( diff < minDiff ) {
